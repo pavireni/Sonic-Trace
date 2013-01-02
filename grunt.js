@@ -94,13 +94,15 @@ module.exports = function(grunt) {
                 src: "app/css/index.css",
 
                 // The relative path to use for the @imports.
-                // paths: [ "app/css" ],
+                paths: [ "app/css" ],
+
+                prefix: "app/css/"
 
                 // Additional production-only stylesheets here.
-                additional: [
-                    "vendor/bootstrap/css/bootstrap.css",
-                    "app/css/sonic-trace.css"
-                ]
+                // additional: [
+                //     "vendor/bootstrap/css/bootstrap.css",
+                //     "app/css/sonic-trace.css"
+                // ]
             }
         },
 
