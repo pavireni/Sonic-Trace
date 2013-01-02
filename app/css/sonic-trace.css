@@ -1,0 +1,18 @@
+.map {
+  width: 100%;
+  height: 700px;
+  margin: 0 0 1em 0;
+}
+#sonic-trace-map {
+  width: 100%;
+  height: 700px;
+  margin: 0 0 1em 0;
+}​
+
+[class^="icon-"] {
+  background-image: url("/vendor/bootstrap/img/glyphicons-halflings.png");
+}
+
+.icon-white {
+  background-image: url("/vendor/bootstrap/img/glyphicons-halflings-white.png");
+}
