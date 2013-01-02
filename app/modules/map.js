@@ -12,16 +12,26 @@ function( App ) {
         template: "map",
         tagName: "div",
 
-        initialize: function() {
-            console.log( "Initialize:Map" );
+        initialize: function( domId, lat, lng, zoom ) {
+            console.log( "Initialize:Map", arguments );
 
+            this.domId = domId;
+            this.lat = lat;
+            this.lng = lng;
+            this.zoom = zoom;
+
+            // Set the rendered element's id, this will be used
+            // by afterRender to locate the map container
+            $(this.el).attr( "id", this.domId );
         },
         afterRender: function() {
-            console.log( "rendered" );
+            var map, layer;
 
-            map = new L.Map( "sonic-trace-map", {
-                center: new L.LatLng( 33.931966, -118.017883 ),
-                zoom: 10
+            console.log( "afterRendered:Map", arguments );
+
+            map = new L.Map( this.domId, {
+                center: new L.LatLng( this.lat, this.lng ),
+                zoom: this.zoom
             });
 
             layer = new L.StamenTileLayer( "watercolor" );

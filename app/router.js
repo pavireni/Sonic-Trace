@@ -9,12 +9,14 @@ define([
 
 function( App, Map, Contributor, Entry, Story ) {
 
-    // Defining the application router, you can attach sub routers here.
     var Router = Backbone.Router.extend({
         initialize: function() {
 
             App.useLayout("main").setViews({
-                ".map": new Map.View()
+                // Map Parameters:       domId, lat, lng, zoom
+                "#map-la": new Map.View( "la", 33.79, -118.2, 11 ),
+                "#map-mx": new Map.View( "mx", 23.16, -106.35, 4 )
+
                 // Additional views here, not specifically these,
                 // a placeholder only.
                 //
