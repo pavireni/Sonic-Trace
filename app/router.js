@@ -33,7 +33,7 @@ function( App, Surface, Contributor, Entry, Story, Marker, Session ) {
                 // Or...
 
                 // 1. Surfaces (Pg.3)
-                // Surface Parameters:       domId, lat, lng, zoom
+                // Surface Parameters:           domId, lat, lng, zoom
                 "#surface-la": new Surface.View( "la", 33.79, -118.2, 11 ),
                 "#surface-mx": new Surface.View( "mx", 23.16, -106.35, 4 )
 
