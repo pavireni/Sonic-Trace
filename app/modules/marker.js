@@ -62,8 +62,8 @@ define([
 
                         // TODO: Icon options should be stored as an L.Icon class!!
                         //
-                        color: "#5cb354",
-                        fillColor: "#5cb354",
+                        color: "magenta",
+                        fillColor: "magenta",
                         fillOpacity: 1,
                         opacity: 1
 
