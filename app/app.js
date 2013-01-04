@@ -3,6 +3,7 @@ define([
     "jquery",
     "lodash",
     "backbone",
+    "store",
 
     // Plugins.
     "plugins/backbone.layoutmanager"
@@ -20,6 +21,22 @@ function( $, _, Backbone ) {
 
     // Localize or create a new JavaScript Template object.
     JST = window.JST = window.JST || {};
+
+    // Create global "namespace"
+    window.Sonic = {
+        Leaflets: new WeakMap()
+    };
+
+    // Patch collection fetching to emit a `fetch` event.
+    Backbone.Collection.prototype.fetch = function() {
+      var fetch = Backbone.Collection.prototype.fetch;
+
+      return function() {
+        this.trigger("fetch");
+
+        return fetch.apply( this, arguments );
+      };
+    }();
 
     // Configure LayoutManager with Backbone Boilerplate defaults.
     Backbone.LayoutManager.configure({

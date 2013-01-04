@@ -10,7 +10,12 @@ define([
         },
 
         initialize: function() {
+            // Ensure no duplicates?
         }
+    });
+
+    Story.Collection = Backbone.Collection.extend({
+
     });
 
     return Story;

@@ -22,7 +22,7 @@ function( App ) {
 
             // Set the rendered element's id, this will be used
             // by afterRender to locate the map container
-            $(this.el).attr( "id", this.domId );
+            $( this.el ).attr( "id", this.domId );
         },
         afterRender: function() {
             var map, layer;

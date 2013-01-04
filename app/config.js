@@ -2,7 +2,7 @@
 require.config({
 
     // Initialize the application with the main application file.
-    deps: [ "zeegaplayer", "bootstrap", "main" ],
+    deps: [ "es6shim", "abstract", "zeegaplayer", "bootstrap", "main" ],
 
     paths: {
         // JavaScript folders.
@@ -15,12 +15,25 @@ require.config({
         lodash: "../vendor/js/libs/lodash",
         backbone: "../vendor/js/libs/backbone",
         bootstrap: "../vendor/bootstrap/js/bootstrap",
+        es6shim: "../vendor/js/libs/es6",
+        abstract: "../vendor/js/libs/abstract",
+        store: "../vendor/js/libs/store",
 
         // Specialty
         zeegaplayer: "../vendor/zeegaplayer/dist/debug/zeega"
     },
 
     shim: {
+        abstract: {
+            deps: [ "es6shim" ],
+            exports: "Abstract"
+        },
+
+        store: {
+            deps: [ "es6shim", "abstract" ],
+            exports: "Store"
+        },
+
         // Backbone library depends on lodash and jQuery.
         backbone: {
             deps: [ "lodash", "jquery" ],
