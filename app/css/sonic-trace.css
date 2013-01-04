@@ -6,7 +6,7 @@
   margin: 0 0 1em 0;
 }​
 
-#map-mx {
+#surface-mx {
   margin-top: -200px;
   z-index: 998;
   position: absolute;
@@ -25,16 +25,6 @@
   margin: 0 0 1em 0;
   border: 2px solid black;
 }​
-
-#markers {
-  z-index: 999;
-  position: absolute;
-  border: 2px solid black;
-  left: 0px;
-  top: 0px;
-  width: 300px;
-  height: 250px;
-}
 
 
 [class^="icon-"] {

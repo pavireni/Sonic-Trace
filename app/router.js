@@ -1,7 +1,7 @@
 define([
     "app",
 
-    "modules/map",
+    "modules/surface",
     "modules/contributor",
     "modules/entry",
     "modules/story",
@@ -9,7 +9,7 @@ define([
     "modules/session"
 ],
 
-function( App, Map, Contributor, Entry, Story, Marker, Session ) {
+function( App, Surface, Contributor, Entry, Story, Marker, Session ) {
     var Router;
 
     // If this is the first visit, there will be no record of any
@@ -32,10 +32,10 @@ function( App, Map, Contributor, Entry, Story, Marker, Session ) {
 
                 // Or...
 
-                // 1. Maps (Pg.3)
-                // Map Parameters:       domId, lat, lng, zoom
-                "#map-la": new Map.View( "la", 33.79, -118.2, 11 ),
-                "#map-mx": new Map.View( "mx", 23.16, -106.35, 4 )
+                // 1. Surfaces (Pg.3)
+                // Surface Parameters:       domId, lat, lng, zoom
+                "#surface-la": new Surface.View( "la", 33.79, -118.2, 11 ),
+                "#surface-mx": new Surface.View( "mx", 23.16, -106.35, 4 )
 
 
 
@@ -84,10 +84,11 @@ function( App, Map, Contributor, Entry, Story, Marker, Session ) {
 
         index: function() {
             if ( Session.get("isFirst") ) {
+                console.log( "Is first visit..." );
                 // If first visit, show introductory video
                 this.intro();
             } else {
-                // Check for new Marker items approx every 20s.
+                // Check for new Marker items approx every 5s.
                 // This is super lame, but should do the job for
                 // at least the immediate future.
                 setInterval(function() {

@@ -20,23 +20,19 @@ function( $, _, Backbone ) {
     };
 
     // Localize or create a new JavaScript Template object.
-    JST = window.JST = window.JST || {};
+    // ...Preload some templates that we can avoid requesting:
+    JST = window.JST = window.JST || {
+        // Map Surfaces are actually just blank——there are only two
+        // in the app and they are part of the primary UI and therefore
+        // can be bootstrapped directly into main.html
+        surface: ""
+    };
 
     // Create global "namespace"
     window.Sonic = {
-        Leaflets: new WeakMap()
+        // |surfaces| are |L.Map| instances; domId is used as the key.
+        surfaces: Object.create( null )
     };
-
-    // Patch collection fetching to emit a `fetch` event.
-    Backbone.Collection.prototype.fetch = function() {
-      var fetch = Backbone.Collection.prototype.fetch;
-
-      return function() {
-        this.trigger("fetch");
-
-        return fetch.apply( this, arguments );
-      };
-    }();
 
     // Configure LayoutManager with Backbone Boilerplate defaults.
     Backbone.LayoutManager.configure({
