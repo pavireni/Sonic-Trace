@@ -7,7 +7,8 @@ define([
 
     Marker.Model = Backbone.Model.extend({
         defaults: {
-            icon: null
+            icon: null,
+            latlng: null
         }
     });
 
@@ -42,7 +43,14 @@ define([
             //
 
             this.forEach(function( mark ) {
+                var latlng, icon;
+
                 if ( mark.get("icon") === null ) {
+
+                    latlng = [
+                        mark.get("media_geo_latitude"),
+                        mark.get("media_geo_longitude")
+                    ];
 
                     // TODO: From here, initialize any defaults that
                     // will be needed for each individual marker
@@ -50,12 +58,27 @@ define([
 
                     // Generate a Leaflet marker, which is added to the
                     // main map surface.
-                    mark.set( "icon",
-                        new L.Marker([
-                            mark.get("media_geo_latitude"),
-                            mark.get("media_geo_longitude")
-                        ]).addTo( surface )
-                    );
+                    icon = new L.Circle( latlng, 300, {
+
+                        // TODO: Icon options should be stored as an L.Icon class!!
+                        //
+                        color: "#5cb354",
+                        fillColor: "#5cb354",
+                        fillOpacity: 1,
+                        opacity: 1
+
+                    }).addTo( surface );
+
+                    // Update the mark model, these properties will signify
+                    // to later render() calls that these marks do not need
+                    // to be rendered to icons
+                    mark.set({
+                        latlng: latlng,
+                        icon: icon
+                    });
+
+                    // TODO: Replace with click handler...
+                    icon.bindPopup("I will be replaced by a Zeega.Player!");
                 }
             });
 
