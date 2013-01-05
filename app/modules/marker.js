@@ -1,7 +1,7 @@
 define([
-    "app"
-
-], function( App ) {
+    "app",
+    "modules/story"
+], function( App, Story ) {
 
     var Marker = App.module();
 
@@ -31,8 +31,12 @@ define([
                 });
         },
 
-        render: function() {
-            var surface = Sonic.surfaces.la;
+        render: function( callback ) {
+            var surface, markers;
+
+            surface = Sonic.surfaces.la;
+
+            markers = [];
 
             // TODO: From here, initialize any defaults that will be
             // needed for ALL newly rendered markers
@@ -42,7 +46,7 @@ define([
             //
             //
 
-            this.forEach(function( mark ) {
+            this.forEach(function( mark, k ) {
                 var latlng, icon;
 
                 if ( mark.get("icon") === null ) {
@@ -62,6 +66,9 @@ define([
 
                         // TODO: Icon options should be stored as an L.Icon class!!
                         //
+                        // Reference:
+                        // https://github.com/Zeega/Planet-Takeout/blob/master/app/modules/map.js
+                        //
                         color: "magenta",
                         fillColor: "magenta",
                         fillOpacity: 1,
@@ -77,10 +84,55 @@ define([
                         icon: icon
                     });
 
-                    // TODO: Replace with click handler...
+                    // Make request for Zeega.Player data
+
+                    // TODO: Replace with click handler... See following...
                     icon.bindPopup("I will be replaced by a Zeega.Player!");
+
+                    // This will eventually replace the above line when
+                    // Zeega.Player instances are created.
+                    //
+                    icon.on("click", function( event ) {
+                        var story;
+
+                        // By binding the click handler here, we create an
+                        // upvar for |mark|
+
+                        console.log( "icon clicked...", mark.get("id"), event );
+
+                        // Tasks Controlled by this event...
+                        //
+                        // 1. Load a story into a zeega player
+                        //
+                        //      1.A. If the story is not yet fetched, then wait until it is
+                        //
+                        // 2. Move the mini-map pointer
+                        //
+                        //      2.A. Not sure how this is actually going to work?
+                        //          The only way to draw these is to use a canvas,
+                        //          but the canvas will overlay across the entire
+                        //          viewport—which means it will intercept click events.
+                        //
+
+                        story = Story.Items.get( mark.get("id") );
+
+                        // If the Story.Model has already been
+                        if ( story && story ) {
+
+                        }
+
+                    });
+
+                    markers.push({
+                        id: mark.get("id")
+                    });
                 }
-            });
+
+                if ( k === this.models.length - 1 && markers.length && callback ) {
+                    callback( markers );
+                }
+            }.bind(this));
+
 
 
             // TODO: Determine a meaningful return value.
@@ -101,7 +153,9 @@ define([
         var marks;
 
         if ( type === "reset" || type === "add" ) {
-            this.render();
+            this.render(function( markers ) {
+                Story.Items.from( markers );
+            });
         }
     });
 
