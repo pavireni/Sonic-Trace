@@ -28,8 +28,6 @@ function( App ) {
         afterRender: function() {
             var map;
 
-            // console.log( "afterRendered:Surface", arguments );
-
             // Initialize a new Leaflet Map Surface, this will be stored
             // in the Sonic.Leaflets global Map instance, its key is this
             // Surface.View
