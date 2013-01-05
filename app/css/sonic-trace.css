@@ -26,6 +26,20 @@
   border: 2px solid black;
 }​
 
+#zeega-player {
+  border: 10px solid black;
+  position: fixed;
+  z-index: 999;
+  height: 400px;
+  width: 600px;
+  margin: 0 auto;
+}
+
+#zeega-controls {
+  width: 600px;
+  margin: 0 auto;
+}
+
 
 [class^="icon-"] {
   background-image: url("/vendor/bootstrap/img/glyphicons-halflings.png");
