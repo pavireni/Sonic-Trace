@@ -4,3 +4,6 @@
 
 
 /* Put development-only CSS below this line. */
+[id^='ZEEGA-player-'] {
+  z-index: 99999;
+}

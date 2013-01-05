@@ -102,25 +102,52 @@ define([
 
                         // Tasks Controlled by this event...
                         //
-                        // 1. Load a story into a zeega player
+                        // 1. Remove existing player (unless it is the same story)
                         //
-                        //      1.A. If the story is not yet fetched, then wait until it is
+                        // 2. Load a story into a zeega player
                         //
-                        // 2. Move the mini-map pointer
+                        //      2.A. If the story is not yet fetched, then wait until it is
                         //
-                        //      2.A. Not sure how this is actually going to work?
+                        // 3. Move the mini-map pointer
+                        //
+                        //      3.A. Not sure how this is actually going to work?
                         //          The only way to draw these is to use a canvas,
                         //          but the canvas will overlay across the entire
                         //          viewport—which means it will intercept click events.
                         //
+                        //
+
+                        // Remove the previously rendered Player
+                        // TODO: Make this conditional
+                        $(".ZEEGA-player").remove();
 
                         story = Story.Items.get( mark.get("id") );
 
-                        // If the Story.Model has already been
-                        if ( story && story ) {
+                        // If the Story.Model has already been requested.
+                        // This is sort of pointless right now since the
+                        // |data| property is being rejected by Zeega.player
+                        //
+                        // TODO: Investigate this failure.
+                        //
+                        if ( story && story.get("isAvailable") ) {
 
+                            new Zeega.player({
+                                autoplay: true,
+                                // data: story.attributes,
+                                //
+                                // Ideally we should control the player target
+                                // but for some reason the player is forced behind the maps.
+                                // This MIGHT be caused by the map style declarations...
+                                // someone with a better sense of CSS can look at this.
+                                //
+                                // target: "#zeega-player",
+                                //
+                                url: story.url()
+                            }, {
+                                next: ".next",
+                                prev: ".prev",
+                            });
                         }
-
                     });
 
                     markers.push({

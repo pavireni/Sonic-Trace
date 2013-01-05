@@ -27,12 +27,11 @@
 }​
 
 #zeega-player {
-  border: 10px solid black;
-  position: fixed;
-  z-index: 999;
+  /*
   height: 400px;
   width: 600px;
   margin: 0 auto;
+  */
 }
 
 #zeega-controls {
