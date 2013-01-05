@@ -2,14 +2,12 @@ define([
     "app",
 
     "modules/surface",
-    "modules/contributor",
-    "modules/entry",
     "modules/story",
     "modules/marker",
     "modules/session"
 ],
 
-function( App, Surface, Contributor, Entry, Story, Marker, Session ) {
+function( App, Surface, Story, Marker, Session ) {
     var Router;
 
     // If this is the first visit, there will be no record of any
