@@ -1,5 +1,9 @@
 @import "../../vendor/bootstrap/css/bootstrap.css";
+@import "../../vendor/zeegaplayer/assets/css/zeega.css";
 @import "../../app/css/sonic-trace.css";
 
 
 /* Put development-only CSS below this line. */
+[id^='ZEEGA-player-'] {
+  z-index: 99999;
+}

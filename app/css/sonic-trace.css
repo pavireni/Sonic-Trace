@@ -6,9 +6,9 @@
   margin: 0 0 1em 0;
 }​
 
-#map-mx {
+#surface-mx {
   margin-top: -200px;
-  z-index: 9999;
+  z-index: 998;
   position: absolute;
   border: 2px solid black;
   width: 300px;
@@ -17,7 +17,7 @@
 
 #mx {
   position: absolute;
-  z-index: 9999;
+  z-index: 998;
   left: 0px;
   bottom: 0px;
   width: 300px;
@@ -25,6 +25,20 @@
   margin: 0 0 1em 0;
   border: 2px solid black;
 }​
+
+#zeega-player {
+  /*
+  height: 400px;
+  width: 600px;
+  margin: 0 auto;
+  */
+}
+
+#zeega-controls {
+  width: 600px;
+  margin: 0 auto;
+}
+
 
 [class^="icon-"] {
   background-image: url("/vendor/bootstrap/img/glyphicons-halflings.png");
