@@ -1,7 +1,8 @@
 define([
     "app",
-    "modules/story"
-], function( App, Story ) {
+    "modules/story",
+    "modules/icon"
+], function( App, Story, Icon ) {
 
     var Marker = App.module();
 
@@ -57,24 +58,14 @@ define([
                     ];
 
                     // TODO: From here, initialize any defaults that
-                    // will be needed for each individual marker
-                    // ie. based on specific marker data
+                    // will be needed for each individual marker:
+                    //
+                    //      - type of Icon to use, based on specific marker data
+                    //
 
                     // Generate a Leaflet marker, which is added to the
                     // main map surface.
-                    icon = new L.Circle( latlng, 300, {
-
-                        // TODO: Icon options should be stored as an L.Icon class!!
-                        //
-                        // Reference:
-                        // https://github.com/Zeega/Planet-Takeout/blob/master/app/modules/map.js
-                        //
-                        color: "magenta",
-                        fillColor: "magenta",
-                        fillOpacity: 1,
-                        opacity: 1
-
-                    }).addTo( surface );
+                    icon = new L.Circle( latlng, 300, new Icon.Point("magenta") ).addTo( surface );
 
                     // Update the mark model, these properties will signify
                     // to later render() calls that these marks do not need
