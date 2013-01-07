@@ -63,9 +63,9 @@ define([
                     //      - type of Icon to use, based on specific marker data
                     //
 
-                    // Generate a Leaflet marker, which is added to the
+                    // Generate an Icon/Leaflet marker, which is added to the
                     // main map surface.
-                    icon = new L.Circle( latlng, 300, new Icon.Point("magenta") ).addTo( surface );
+                    icon = new Icon({ latlng: latlng, use: "magenta" }).addTo( surface );
 
                     // Update the mark model, these properties will signify
                     // to later render() calls that these marks do not need
