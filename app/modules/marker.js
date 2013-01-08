@@ -133,11 +133,15 @@ define([
                                 //
                                 // target: "#zeega-player",
                                 //
+                                //  TODO: Investigate why passing previously requested data
+                                //  doesn't work.
                                 url: story.url()
                             }, {
                                 next: ".next",
                                 prev: ".prev"
                             });
+
+                            $("#surface-player").addClass("center");
                         }
                     });
 
