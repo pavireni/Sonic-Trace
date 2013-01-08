@@ -1,18 +1,17 @@
+#surface-la {
+  width: 100%;
+}
+
 #la {
   position: relative;
   z-index: 8;
-  width: 850px;
-  height: 650px;
-  margin: 0 0 1em 0;
+  width: 960px;
+  height: 720px;
+  margin: 0 auto;
 }​
 
 #surface-mx {
-  margin-top: -200px;
-  z-index: 998;
-  position: absolute;
-  border: 2px solid black;
   width: 300px;
-  height: 250px;
 }
 
 #mx {
@@ -22,7 +21,7 @@
   bottom: 0px;
   width: 300px;
   height: 250px;
-  margin: 0 0 1em 0;
+  margin: 0 auto;
   border: 2px solid black;
 }​
 
