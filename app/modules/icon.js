@@ -66,6 +66,10 @@ define([], function() {
     // constructor. This allows Icon.Presets to be modified
     // and extended inline.
     Icon.Presets = {
+
+        //
+        // new Icon({ latlng: latlng, use: "magenta" })
+        //
         magenta: {
             construct: "CircleMarker",
             args: function( opts ) {
@@ -78,9 +82,10 @@ define([], function() {
                         fillOpacity: 1,
                         opacity: 1
                     }
-                ]
+                ];
             }
         }
+        // ... Add more Presets...
     };
 
     return Icon;
