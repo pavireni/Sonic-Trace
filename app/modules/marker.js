@@ -136,7 +136,7 @@ define([
                                 url: story.url()
                             }, {
                                 next: ".next",
-                                prev: ".prev",
+                                prev: ".prev"
                             });
                         }
                     });
