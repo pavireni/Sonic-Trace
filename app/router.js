@@ -76,9 +76,11 @@ function( App, Surface, Story, Marker, Session ) {
         },
 
         routes: {
-            "": "index"
+            "": "index",
+            "story/:id": "story"
             // routes to view specific story via URL
         },
+
 
         index: function() {
             if ( Session.get("isFirst") ) {
@@ -98,12 +100,34 @@ function( App, Surface, Story, Marker, Session ) {
             }
         },
 
+        story: function( id ){
+            _.delay(function(){
+                new Zeega.player({
+                    autoplay: true,
+                    // data: story.attributes,
+                
+                    //
+                    target: "#zeega-player",
+                    //
+                    //  TODO: Investigate why passing previously requested data
+                    //  doesn't work.
+                    url: "http://alpha.zeega.org/api/items/"+id,
+                    next: ".next",
+                    prev: ".prev"
+                }, 1000);
+
+                $(".surface-player").addClass("center");
+            });
+            
+        },
+
         intro: function() {
             // render the intro view
             console.log( "Render the intro view" );
         }
     });
 
+    
     // Required, return the module for AMD compliance.
     return Router;
 });

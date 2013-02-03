@@ -16,6 +16,8 @@ function( App, DOM, Router ) {
     // navigation from this instance.
     App.router = new Router();
 
+    Sonic.router = App.router;
+
     // Trigger the initial route and enable HTML5 History API support, set the
     // root folder to '/' by default.  Change in App.js.
     Backbone.history.start({

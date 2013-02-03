@@ -1,9 +1,10 @@
 define([
     "app",
+    "router",
     "modules/story",
     "modules/icon",
     "modules/origins"
-], function( App, Story, Icon, Origins ) {
+], function( App, Router, Story, Icon, Origins ) {
 
     var Marker = App.module();
 
@@ -48,12 +49,8 @@ define([
             //
             //
 
-            // TODO :: Move this to a new controls view for player
+            
 
-            $(".close").click(function(){
-                $(".ZEEGA-player").remove();
-                $(".surface-player").removeClass("center");
-            });
 
             this.forEach(function( mark, k ) {
                 var latlng, icon, iconLabel, iconTypes;
@@ -125,7 +122,7 @@ define([
                         $(popup._wrapper).click(function(){
                             
                             
-
+                            Sonic.router.navigate("story/" + story.id, { silent : true });
                             // By binding the click handler here, we create an
                             // upvar for |mark|
 
@@ -195,6 +192,14 @@ define([
                     callback( markers );
                 }
             }.bind(this));
+
+            // TODO :: Move this to a new controls view for player
+
+            $(".close").click(function(){
+                $(".ZEEGA-player").remove();
+                $(".surface-player").removeClass("center");
+                Sonic.router.navigate("", { silent : true });
+            });
 
 
 
