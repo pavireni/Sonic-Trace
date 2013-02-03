@@ -84,7 +84,24 @@ define([], function() {
                     }
                 ];
             }
+        },
+
+        yellow: {
+            construct: "CircleMarker",
+            args: function( opts ) {
+                return [
+                    opts.latlng,
+                    {
+                        radius: opts.radius || 15,
+                        color: "yellow",
+                        fillColor: "yellow",
+                        fillOpacity: 1,
+                        opacity: 1
+                    }
+                ];
+            }
         }
+
         // ... Add more Presets...
     };
 
