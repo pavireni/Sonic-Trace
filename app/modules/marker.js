@@ -122,7 +122,7 @@ define([
                         $(popup._wrapper).click(function(){
                             
                             
-                            Sonic.router.navigate("story/" + story.id, { silent : true });
+                            Sonic.router.navigate("#story/" + story.id, { silent : true });
                             // By binding the click handler here, we create an
                             // upvar for |mark|
 
@@ -162,11 +162,7 @@ define([
                                 new Zeega.player({
                                     autoplay: true,
                                     // data: story.attributes,
-                                    //
-                                    // Ideally we should control the player target
-                                    // but for some reason the player is forced behind the maps.
-                                    // This MIGHT be caused by the map style declarations...
-                                    // someone with a better sense of CSS can look at this.
+                                
                                     //
                                     target: "#zeega-player",
                                     //
