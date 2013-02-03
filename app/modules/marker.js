@@ -47,6 +47,7 @@ define([
             //
             //
 
+
             this.forEach(function( mark, k ) {
                 var latlng, icon;
 
@@ -78,7 +79,7 @@ define([
                     // Make request for Zeega.Player data
 
                     // TODO: Replace with click handler... See following...
-                    icon.bindPopup("I will be replaced by a Zeega.Player!");
+                    //icon.bindPopup("I will be replaced by a Zeega.Player!");
 
                     // This will eventually replace the above line when
                     // Zeega.Player instances are created.
@@ -131,17 +132,17 @@ define([
                                 // This MIGHT be caused by the map style declarations...
                                 // someone with a better sense of CSS can look at this.
                                 //
-                                // target: "#zeega-player",
+                                target: "#zeega-player",
                                 //
                                 //  TODO: Investigate why passing previously requested data
                                 //  doesn't work.
-                                url: story.url()
-                            }, {
+                                url: story.url(),
                                 next: ".next",
                                 prev: ".prev"
                             });
 
-                            $("#surface-player").addClass("center");
+                            $(".surface-player").addClass("center");
+
                         }
                     });
 
