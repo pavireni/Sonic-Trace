@@ -47,6 +47,12 @@ define([
             //
             //
 
+            // TODO :: Move this to a new controls view for player
+
+            $('.close').click(function(){
+                $(".ZEEGA-player").remove();
+                $(".surface-player").removeClass("center");
+            });
 
             this.forEach(function( mark, k ) {
                 var latlng, icon;
@@ -81,69 +87,86 @@ define([
                     // TODO: Replace with click handler... See following...
                     //icon.bindPopup("I will be replaced by a Zeega.Player!");
 
-                    // This will eventually replace the above line when
-                    // Zeega.Player instances are created.
-                    //
-                    icon.on("click", function( event ) {
-                        var story;
+                    icon.on("mouseover", function( event ) {
+                        console.log( "icon hovered...", mark.get("id"), event );
+                        
+                        var story,
+                            popup;
 
-                        // By binding the click handler here, we create an
-                        // upvar for |mark|
-
-                        console.log( "icon clicked...", mark.get("id"), event );
-
-                        // Tasks Controlled by this event...
-                        //
-                        // 1. Remove existing player (unless it is the same story)
-                        //
-                        // 2. Load a story into a zeega player
-                        //
-                        //      2.A. If the story is not yet fetched, then wait until it is
-                        //
-                        // 3. Move the mini-map pointer
-                        //
-                        //      3.A. Not sure how this is actually going to work?
-                        //          The only way to draw these is to use a canvas,
-                        //          but the canvas will overlay across the entire
-                        //          viewport—which means it will intercept click events.
-                        //
-                        //
-
-                        // Remove the previously rendered Player
-                        // TODO: Make this conditional
-                        $(".ZEEGA-player").remove();
 
                         story = Story.Items.get( mark.get("id") );
 
-                        // If the Story.Model has already been requested.
-                        // This is sort of pointless right now since the
-                        // |data| property is being rejected by Zeega.player
-                        //
-                        // TODO: Investigate this failure.
-                        //
-                        if ( story && story.get("isAvailable") ) {
+                        //Create popup TODO move content to template
 
-                            new Zeega.player({
-                                autoplay: true,
-                                // data: story.attributes,
-                                //
-                                // Ideally we should control the player target
-                                // but for some reason the player is forced behind the maps.
-                                // This MIGHT be caused by the map style declarations...
-                                // someone with a better sense of CSS can look at this.
-                                //
-                                target: "#zeega-player",
-                                //
-                                //  TODO: Investigate why passing previously requested data
-                                //  doesn't work.
-                                url: story.url(),
-                                next: ".next",
-                                prev: ".prev"
-                            });
+                        popup = new L.popup();
+                        
+                        popup.setLatLng([ event.target.getLatLng().lat, event.target.getLatLng().lng ])
+                            .setContent( story.get('title')+"<br><a>Click to Play</a>" )
+                            .openOn(surface);
+                        
 
-                            $(".surface-player").addClass("center");
+                        $(popup._wrapper).click(function(){
+                            
+                            
 
-                        }
+                            // By binding the click handler here, we create an
+                            // upvar for |mark|
+
+                            console.log( "popup clicked...", mark.get("id"), event );
+
+                            // Tasks Controlled by this event...
+                            //
+                            // 1. Remove existing player (unless it is the same story)
+                            //
+                            // 2. Load a story into a zeega player
+                            //
+                            //      2.A. If the story is not yet fetched, then wait until it is
+                            //
+                            // 3. Move the mini-map pointer
+                            //
+                            //      3.A. Not sure how this is actually going to work?
+                            //          The only way to draw these is to use a canvas,
+                            //          but the canvas will overlay across the entire
+                            //          viewport—which means it will intercept click events.
+                            //
+                            //
+
+                            // Remove the previously rendered Player
+                            // TODO: Make this conditional
+                            $(".ZEEGA-player").remove();
+
+                            
+
+                            // If the Story.Model has already been requested.
+                            // This is sort of pointless right now since the
+                            // |data| property is being rejected by Zeega.player
+                            //
+                            // TODO: Investigate this failure.
+                            //
+                            if ( story && story.get("isAvailable") ) {
+
+                                new Zeega.player({
+                                    autoplay: true,
+                                    // data: story.attributes,
+                                    //
+                                    // Ideally we should control the player target
+                                    // but for some reason the player is forced behind the maps.
+                                    // This MIGHT be caused by the map style declarations...
+                                    // someone with a better sense of CSS can look at this.
+                                    //
+                                    target: "#zeega-player",
+                                    //
+                                    //  TODO: Investigate why passing previously requested data
+                                    //  doesn't work.
+                                    url: story.url(),
+                                    next: ".next",
+                                    prev: ".prev"
+                                });
+
+                                $(".surface-player").addClass("center");
+
+                            }
+                        });
                     });
 
                     markers.push({
