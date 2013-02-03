@@ -3,8 +3,16 @@
 
 }
 
+
+
+#main {
+  min-height:100%;
+}
+
+
 #surface-la {
   width: 100%;
+  height:100%;
   z-index: 1;
 }
 
@@ -19,16 +27,26 @@
 
 
 
-#surface-player {
+.surface-player {
   z-index: 2;
-  position: relative;
-  width: 960px;
-  height: 720px;
-  margin-left: -9999px;
+  width:100%;
+  height:100%;
+  left:-100%;
 }
 
+
+
+#zeega-player{
+  position: relative;
+  width: 480px;
+  height: 360px;
+  margin:auto;
+  margin-top:150px;
+}
+
+
 .center {
-  margin-left: auto;
+  left:0;
 }
 
 
@@ -36,8 +54,10 @@
 #la {
   position: relative;
 
-  width: 960px;
-  height: 720px;
+  width: 100%;
+  height: 100%;
+  min-height:700px;
+ 
   margin: 0 auto;
 }
 
@@ -45,6 +65,10 @@
   width: 300px;
   height: 250px;
   margin: 0 auto;
+  position: fixed;
+  bottom:10px;
+  left:10px;
+  border: solid 2px black;
 }​
 
 #zeega-controls {
@@ -60,3 +84,20 @@
 .icon-white {
   background-image: url("/vendor/bootstrap/img/glyphicons-halflings-white.png");
 }
+
+.next {
+  left:40px;
+  position:absolute;
+  margin-top:-22px;
+}
+.prev {
+  position:absolute;
+  margin-top:-22px;
+}
+
+.player-close {
+  margin-top:-22px;
+}
+
+
+
