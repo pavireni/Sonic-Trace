@@ -99,5 +99,18 @@
   margin-top:-22px;
 }
 
+.origin-label {
+  position: fixed;
+  bottom: 10px;
+  left: 10px;
+  width: 280px;
+  padding:10px;
+  text-align:center;
+  z-index: 100;
+  font-size: 40px;
+  line-height: 35px;
+}
 
-
+.leaflet-control-attribution {
+  display:none !important;
+}

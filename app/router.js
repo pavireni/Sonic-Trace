@@ -32,8 +32,8 @@ function( App, Surface, Story, Marker, Session ) {
 
                 // 1. Surfaces (Pg.3)
                 // Surface Parameters:           domId, lat, lng, zoom
-                "#surface-la": new Surface.View( "la", 34.02, -118.20, 10 ),
-                "#surface-mx": new Surface.View( "mx", 23.16, -106.35, 4 )
+                "#surface-la": new Surface.View( "la", 34.02, -118.20, 10, true ),
+                "#surface-mx": new Surface.View( "mx", 23.16, -106.35, 4, false )
 
 
 

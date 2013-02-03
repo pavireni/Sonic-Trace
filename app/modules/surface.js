@@ -12,13 +12,14 @@ function( App ) {
 
         tagName: "div",
 
-        initialize: function( domId, lat, lng, zoom ) {
+        initialize: function( domId, lat, lng, zoom, zoomControl ) {
             console.log( "Initialize:Surface", arguments );
 
             this.domId = domId;
             this.options = {
                 center: new L.LatLng( lat, lng ),
-                zoom: zoom
+                zoom: zoom,
+                zoomControl: zoomControl
             };
 
             // Set the rendered element's id, this will be used

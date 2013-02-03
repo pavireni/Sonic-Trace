@@ -10,6 +10,11 @@ require.config({
         plugins: "../vendor/js/plugins",
         vendor: "../vendor",
 
+        text: "../vendor/js/plugins/text",
+        json: "../vendor/js/plugins/json",
+        alias: "../vendor/js/plugins/alias",
+        serializeform: "../vendor/js/plugins/serializeForm",
+
         // Libraries.
         jquery: "../vendor/js/libs/jquery",
         lodash: "../vendor/js/libs/lodash",

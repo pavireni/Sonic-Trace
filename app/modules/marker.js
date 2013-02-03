@@ -1,9 +1,9 @@
 define([
     "app",
     "modules/story",
-    "modules/icon"
-    
-], function( App, Story, Icon ) {
+    "modules/icon",
+    "modules/origins"
+], function( App, Story, Icon, Origins ) {
 
     var Marker = App.module();
 
@@ -50,7 +50,7 @@ define([
 
             // TODO :: Move this to a new controls view for player
 
-            $('.close').click(function(){
+            $(".close").click(function(){
                 $(".ZEEGA-player").remove();
                 $(".surface-player").removeClass("center");
             });
@@ -67,12 +67,12 @@ define([
 
                     // Parse tags to check for icon to be used
 
-                    iconTypes = _.filter( mark.get('tags'), function(tag){
-                        return tag.indexOf("icon-")===0;
+                    iconTypes = _.filter( mark.get("tags"), function( tag ){
+                        return tag.indexOf("icon-") === 0;
                     });
 
                     if( iconTypes.length > 0 ){
-                        iconLabel = iconTypes[0].substring(5);
+                        iconLabel = iconTypes[ 0 ].substring( 5 );
                     } else {
                         iconLabel = "magenta";
                     }
@@ -85,6 +85,7 @@ define([
                     // Update the mark model, these properties will signify
                     // to later render() calls that these marks do not need
                     // to be rendered to icons
+
                     mark.set({
                         latlng: latlng,
                         icon: icon
@@ -92,24 +93,32 @@ define([
 
                     // Make request for Zeega.Player data
 
-                    // TODO: Replace with click handler... See following...
-                    //icon.bindPopup("I will be replaced by a Zeega.Player!");
-
                     icon.on("mouseover", function( event ) {
                         console.log( "icon hovered...", mark.get("id"), event );
-                        console.log(Origins);
+                       
+
                         var story,
-                            popup;
+                            popup,
+                            origin;
 
 
                         story = Story.Items.get( mark.get("id") );
 
-                        //Create popup TODO move content to template
+                        //Update Origin Map
+
+                        origin = Sonic.origins.match(mark);
+                        Sonic.surfaces.mx.panTo( new L.LatLng( origin.get("lat"), origin.get("lng")));
+                        $(".origin-label").fadeOut("fast", function(){
+                            $(this).html( origin.get("place_name") ).fadeIn("fast");
+                        });
+
+                        // Create popup
+                        // TODO move content to template
 
                         popup = new L.popup();
                         
                         popup.setLatLng([ event.target.getLatLng().lat, event.target.getLatLng().lng ])
-                            .setContent( story.get('title')+"<br><a>Click to Play</a>" )
+                            .setContent( story.get("title")+"<br><a>Click to Play</a>" )
                             .openOn(surface);
                         
 
