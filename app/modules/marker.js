@@ -109,7 +109,7 @@ define([
                         origin = Sonic.origins.match(mark);
                         Sonic.surfaces.mx.panTo( new L.LatLng( origin.get("lat"), origin.get("lng")));
                         $(".origin-label").fadeOut("fast", function(){
-                            $(this).html( origin.get("place_name") ).fadeIn("fast");
+                            $(this).html( origin.get("place_name") ).fadeIn("slow");
                         });
 
                         // Create popup
