@@ -102,6 +102,7 @@ function( App, Surface, Story, Marker, Session ) {
 
         story: function( id ){
             _.delay(function(){
+                $(".ZEEGA-player").remove();
                 new Zeega.player({
                     autoplay: true,
                     // data: story.attributes,
@@ -114,10 +115,10 @@ function( App, Surface, Story, Marker, Session ) {
                     url: "http://alpha.zeega.org/api/items/"+id,
                     next: ".next",
                     prev: ".prev"
-                }, 1000);
+                });
 
                 $(".surface-player").addClass("center");
-            });
+            },1000);
             
         },
 
