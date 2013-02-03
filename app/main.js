@@ -4,7 +4,7 @@ require([
     // Application.
     "app",
 
-    "DOM",
+    "dom",
 
     // Main Router.
     "router"
