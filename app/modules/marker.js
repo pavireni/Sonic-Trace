@@ -2,6 +2,7 @@ define([
     "app",
     "modules/story",
     "modules/icon"
+    
 ], function( App, Story, Icon ) {
 
     var Marker = App.module();
@@ -55,7 +56,7 @@ define([
             });
 
             this.forEach(function( mark, k ) {
-                var latlng, icon;
+                var latlng, icon, iconLabel, iconTypes;
 
                 if ( mark.get("icon") === null ) {
 
@@ -64,15 +65,22 @@ define([
                         mark.get("media_geo_longitude")
                     ];
 
-                    // TODO: From here, initialize any defaults that
-                    // will be needed for each individual marker:
-                    //
-                    //      - type of Icon to use, based on specific marker data
-                    //
+                    // Parse tags to check for icon to be used
+
+                    iconTypes = _.filter( mark.get('tags'), function(tag){
+                        return tag.indexOf("icon-")===0;
+                    });
+
+                    if( iconTypes.length > 0 ){
+                        iconLabel = iconTypes[0].substring(5);
+                    } else {
+                        iconLabel = "magenta";
+                    }
+
 
                     // Generate an Icon/Leaflet marker, which is added to the
                     // main map surface.
-                    icon = new Icon({ latlng: latlng, use: "magenta" }).addTo( surface );
+                    icon = new Icon({ latlng: latlng, use: iconLabel }).addTo( surface );
 
                     // Update the mark model, these properties will signify
                     // to later render() calls that these marks do not need
@@ -89,7 +97,7 @@ define([
 
                     icon.on("mouseover", function( event ) {
                         console.log( "icon hovered...", mark.get("id"), event );
-                        
+                        console.log(Origins);
                         var story,
                             popup;
 
