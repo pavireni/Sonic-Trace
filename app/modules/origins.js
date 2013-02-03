@@ -30,6 +30,8 @@ define([
         }
     });
 
+    // TODO load from json file and update with all locations in KML file (link below)
+    // https://maps.google.com/maps/ms?vps=2&hl=en&ie=UTF8&oe=UTF8&authuser=0&msa=0&output=kml&msid=218206009833964695943.0004d2c410d3d4fee71ea
 
     Sonic.origins = new Origins.Collection([
     {
