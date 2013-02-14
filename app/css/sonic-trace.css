@@ -3,12 +3,55 @@
 
 }
 
-
-
 #main {
   min-height:100%;
 }
 
+.logo {
+  position: absolute;
+  top: 37px;
+  right: 29px;
+  z-index: 10;
+}
+
+.main-navigation {
+  position: absolute;
+  z-index: 10;
+  background: url(/app/img/nav-bg.png);
+  width: 319px;
+  height: 64px;
+  top: 47px;
+  right: 281px;
+  padding: 28px 0 0 37px;
+}
+
+.main-navigation li {
+  list-style-type: none;
+}
+
+.main-navigation a {
+  float: left;
+  height: 30px;
+  background-image: url(/app/img/nav-text.png);
+  text-indent: -9999px;
+}
+
+.main-navigation a.about {
+  width: 45px;
+  background-position: 0 0;
+  margin-right: 34px;
+}
+
+.main-navigation a.your-story {
+  width: 93px;
+  background-position: -45px 0;
+  margin-right: 29px;
+}
+
+.main-navigation a.blog {
+  width: 35px;
+  background-position: -138px 0;
+}
 
 #surface-la {
   width: 100%;
@@ -113,4 +156,26 @@
 
 .leaflet-control-attribution {
   display:none !important;
+}
+
+.leaflet-control-container .leaflet-top .leaflet-bar {
+  background: none;
+  border-radius: 0;
+  padding: 0;
+  margin: 17px 0 0 19px;
+}
+
+.leaflet-control-container .leaflet-top .leaflet-bar-part {
+  background: url(/app/img/map-zoom-icons.png);
+  border-radius: 0;
+  width: 28px;
+  height: 28px;
+}
+
+.leaflet-control-container .leaflet-top .leaflet-bar-part-top {
+  margin-bottom: 10px;
+}
+
+.leaflet-control-container .leaflet-top .leaflet-control-zoom-out {
+  background-position: 0 -28px;
 }
