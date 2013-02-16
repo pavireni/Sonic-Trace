@@ -70,39 +70,109 @@ define([], function() {
         //
         // new Icon({ latlng: latlng, use: "magenta" })
         //
+
+        // begin temporary for testing
+
         magenta: {
             construct: "CircleMarker",
             args: function( opts ) {
                 return [
                     opts.latlng,
                     {
-                        radius: opts.radius || 5,
-                        color: "magenta",
-                        fillColor: "magenta",
-                        fillOpacity: 1,
-                        opacity: 1
+                        radius: opts.radius || 10,
+                        color: "#5c7b80",
+                        fillColor: "#5c7b80",
+                        fillOpacity: 0.8,
+                        opacity: 0.7
                     }
                 ];
             }
         },
 
         yellow: {
+            construct: "Marker",
+            args: function( opts ) {
+                return [
+                    opts.latlng,
+                    {
+                        icon: new L.icon({
+                            iconUrl: '/app/img/map-icon-star.png',
+                            iconSize: [33, 32]
+                        }),
+                        opacity: 0.7
+                    }
+                ];
+            }
+        },
+
+        // end temporary for testing
+
+        // begin real icons
+
+        standard: {
             construct: "CircleMarker",
             args: function( opts ) {
                 return [
                     opts.latlng,
                     {
-                        radius: opts.radius || 15,
-                        color: "yellow",
-                        fillColor: "yellow",
-                        fillOpacity: 1,
-                        opacity: 1
+                        radius: opts.radius || 10,
+                        color: "#5c7b80",
+                        fillColor: "#5c7b80",
+                        fillOpacity: 0.7,
+                        opacity: 0.7
+                    }
+                ];
+            }
+        },
+
+        video: {
+            construct: "Marker",
+            args: function( opts ) {
+                return [
+                    opts.latlng,
+                    {
+                        icon: new L.icon({
+                            iconUrl: '/app/img/map-icon-video.png',
+                            iconSize: [48, 48],
+                            opacity: 0.7
+                        })
+                    }
+                ];
+            }
+        },
+
+        audio: {
+            construct: "Marker",
+            args: function( opts ) {
+                return [
+                    opts.latlng,
+                    {
+                        icon: new L.icon({
+                            iconUrl: '/app/img/map-icon-audio.png',
+                            iconSize: [48, 48],
+                            opacity: 0.7
+                        })
+                    }
+                ];
+            }
+        },
+
+        feature: {
+            construct: "Marker",
+            args: function( opts ) {
+                return [
+                    opts.latlng,
+                    {
+                        icon: new L.icon({
+                            iconUrl: '/app/img/map-icon-star.png',
+                            iconSize: [33, 32],
+                            opacity: 0.7
+                        })
                     }
                 ];
             }
         }
 
-        // ... Add more Presets...
     };
 
     return Icon;

@@ -71,7 +71,7 @@ define([
                     if( iconTypes.length > 0 ){
                         iconLabel = iconTypes[ 0 ].substring( 5 );
                     } else {
-                        iconLabel = "magenta";
+                        iconLabel = "standard";
                     }
 
 
@@ -96,12 +96,26 @@ define([
 
                         var story,
                             popup,
-                            origin;
+                            origin,
+                            point;
 
 
                         story = Story.Items.get( mark.get("id") );
+                        point = event.target;
 
-                        //Update Origin Map
+                        // Highlight the point
+                        if ( point.options.icon ) {
+                            point.setOpacity(1);
+                        } else {
+                            point.setStyle({
+                                opacity: 1,
+                                fillOpacity: 1,
+                                color: "#7a676b",
+                                fillColor: "#7a676b"
+                            });
+                        }
+
+                        // Update Origin Map
 
                         origin = Sonic.origins.match(mark);
                         Sonic.surfaces.mx.panTo( new L.LatLng( origin.get("lat"), origin.get("lng")));
@@ -177,6 +191,22 @@ define([
 
                             }
                         });
+                    });
+
+                    icon.on("mouseout", function( event ) {
+                        console.log("mouseout");
+                        var point = event.target;
+
+                        if ( point.options.icon ) {
+                            point.setOpacity(0.7);
+                        } else {
+                            point.setStyle({
+                                opacity: 0.7,
+                                fillOpacity: 0.7,
+                                color: "#5c7b80",
+                                fillColor: "#5c7b80"
+                            });
+                        }
                     });
 
                     markers.push({
