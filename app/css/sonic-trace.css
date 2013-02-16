@@ -171,3 +171,31 @@
 .leaflet-control-container .leaflet-top .leaflet-control-zoom-out {
   background-position: 0 -28px;
 }
+
+.leaflet-map-pane .leaflet-popup-pane {
+  z-index: 3;
+}
+
+.leaflet-map-pane .leaflet-popup {
+  margin: -21px 0 0 56px;
+  position: relative;
+}
+
+.leaflet-popup-pane .leaflet-popup-tip-container {
+  display: none;
+}
+
+.leaflet-popup-pane .leaflet-popup-content-wrapper {
+  border-radius: 0;
+  background: rgba(255,255,255,0.75);
+  padding: 2px 5px 2px 25px;
+}
+
+.leaflet-popup-pane .leaflet-popup-content-wrapper .leaflet-popup-content {
+  font: normal 14px 'Permanent Marker', cursive;
+  margin: 0;
+}
+
+.leaflet-popup-pane .leaflet-popup-close-button {
+  display: none;
+}
