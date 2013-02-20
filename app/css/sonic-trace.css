@@ -146,6 +146,16 @@
   font: normal 14px 'Permanent Marker', cursive;
 }
 
+.map-legend {
+  height: 29px;
+  width: 533px;
+  background: url(/app/img/map-legend.png);
+  position: fixed;
+  left: 247px;
+  bottom: 24px;
+  z-index: 90;
+}
+
 .leaflet-control-attribution {
   display:none !important;
 }
@@ -172,12 +182,13 @@
   background-position: 0 -28px;
 }
 
+/*
 .leaflet-map-pane .leaflet-popup-pane {
   z-index: 3;
 }
+*/
 
 .leaflet-map-pane .leaflet-popup {
-  margin: -21px 0 0 56px;
   position: relative;
 }
 

@@ -126,71 +126,17 @@ define([
                         // Create popup
                         // TODO move content to template
 
-                        popup = new L.popup();
+                        popup = new L.popup({
+                            offset: new L.Point(140, -16),
+                            minWidth: 200,
+                            maxWidth: 200,
+                            minHeight: 36
+                        });
                         
                         popup.setLatLng([ event.target.getLatLng().lat, event.target.getLatLng().lng ])
-                            .setContent( story.get("title")+"<br><a>Click to Play</a>" )
+                            .setContent( story.get("title") )
                             .openOn(surface);
                         
-
-                        $(popup._wrapper).click(function(){
-                            
-                            
-                            Sonic.router.navigate("#story/" + story.id, { silent : true });
-                            // By binding the click handler here, we create an
-                            // upvar for |mark|
-
-                            console.log( "popup clicked...", mark.get("id"), event );
-
-                            // Tasks Controlled by this event...
-                            //
-                            // 1. Remove existing player (unless it is the same story)
-                            //
-                            // 2. Load a story into a zeega player
-                            //
-                            //      2.A. If the story is not yet fetched, then wait until it is
-                            //
-                            // 3. Move the mini-map pointer
-                            //
-                            //      3.A. Not sure how this is actually going to work?
-                            //          The only way to draw these is to use a canvas,
-                            //          but the canvas will overlay across the entire
-                            //          viewport—which means it will intercept click events.
-                            //
-                            //
-
-                            // Remove the previously rendered Player
-                            // TODO: Make this conditional
-                            $(".ZEEGA-player").remove();
-
-                            
-
-                            // If the Story.Model has already been requested.
-                            // This is sort of pointless right now since the
-                            // |data| property is being rejected by Zeega.player
-                            //
-                            // TODO: Investigate this failure.
-                            //
-                            if ( story && story.get("isAvailable") ) {
-
-                                new Zeega.player({
-                                    autoplay: true,
-                                    // data: story.attributes,
-                                
-                                    //
-                                    target: "#zeega-player",
-                                    //
-                                    //  TODO: Investigate why passing previously requested data
-                                    //  doesn't work.
-                                    url: story.url(),
-                                    next: ".next",
-                                    prev: ".prev"
-                                });
-
-                                $(".surface-player").addClass("center");
-
-                            }
-                        });
                     });
 
                     icon.on("mouseout", function( event ) {
@@ -209,6 +155,67 @@ define([
                         }
                     });
 
+                    icon.on("click", function(event){
+
+                        var story = Story.Items.get( mark.get("id") );
+                            
+                        
+                        Sonic.router.navigate("#story/" + story.id, { silent : true });
+                        // By binding the click handler here, we create an
+                        // upvar for |mark|
+
+                        console.log( "icon clicked...", mark.get("id"), event );
+
+                        // Tasks Controlled by this event...
+                        //
+                        // 1. Remove existing player (unless it is the same story)
+                        //
+                        // 2. Load a story into a zeega player
+                        //
+                        //      2.A. If the story is not yet fetched, then wait until it is
+                        //
+                        // 3. Move the mini-map pointer
+                        //
+                        //      3.A. Not sure how this is actually going to work?
+                        //          The only way to draw these is to use a canvas,
+                        //          but the canvas will overlay across the entire
+                        //          viewport—which means it will intercept click events.
+                        //
+                        //
+
+                        // Remove the previously rendered Player
+                        // TODO: Make this conditional
+                        $(".ZEEGA-player").remove();
+
+                        
+
+                        // If the Story.Model has already been requested.
+                        // This is sort of pointless right now since the
+                        // |data| property is being rejected by Zeega.player
+                        //
+                        // TODO: Investigate this failure.
+                        //
+                        if ( story && story.get("isAvailable") ) {
+
+                            new Zeega.player({
+                                autoplay: true,
+                                // data: story.attributes,
+                            
+                                //
+                                target: "#zeega-player",
+                                //
+                                //  TODO: Investigate why passing previously requested data
+                                //  doesn't work.
+                                url: story.url(),
+                                next: ".next",
+                                prev: ".prev"
+                            });
+
+                            $(".surface-player").addClass("center");
+
+                        }
+
+                    });
                     markers.push({
                         id: mark.get("id")
                     });
