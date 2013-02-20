@@ -87,18 +87,28 @@
 }
 
 .surface-player {
+  background: rgba(0,0,0,0.65);
   z-index: 110;
   width:100%;
   height:100%;
   left:-100%;
 }
 
+.surface-player .player-container {
+  width: 518px;
+  height: 399px;
+  background: url(/app/img/player-bg.png) no-repeat;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin: -200px 0 0 -259px;
+}
+
 #zeega-player{
   position: relative;
-  width: 480px;
-  height: 360px;
-  margin:auto;
-  margin-top:150px;
+  height: 290px;
+  width: 458px;
+  margin: 20px auto 0;
 }
 
 
@@ -120,18 +130,22 @@
   background-image: url("/vendor/bootstrap/img/glyphicons-halflings-white.png");
 }
 
-.next {
-  left:40px;
-  position:absolute;
-  margin-top:-22px;
-}
-.prev {
-  position:absolute;
-  margin-top:-22px;
+.player-close {
+  position: absolute;
+  top: -11px;
+  right: -10px;
+  width: 28px;
+  height: 27px;
+  background: url(/app/img/close-btn.png);
+  text-indent: -9999px;
 }
 
-.player-close {
-  margin-top:-22px;
+.player-title {
+  font: normal 31px/25px 'Permanent Marker', cursive;
+  text-align: center;
+  margin: 15px 0 0;
+  height: 45px;
+  display: block;
 }
 
 .origin-label {

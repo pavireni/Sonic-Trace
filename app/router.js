@@ -104,6 +104,9 @@ function( App, Surface, Story, Marker, Session ) {
             _.delay(function(){
                 $(".ZEEGA-player").remove();
                 new Zeega.player({
+                    controls: {
+                      arrows: true
+                    },
                     autoplay: true,
                     // data: story.attributes,
                 
@@ -112,11 +115,11 @@ function( App, Surface, Story, Marker, Session ) {
                     //
                     //  TODO: Investigate why passing previously requested data
                     //  doesn't work.
-                    url: "http://alpha.zeega.org/api/items/"+id,
-                    next: ".next",
-                    prev: ".prev"
+                    url: "http://alpha.zeega.org/api/items/"+id
                 });
 
+                // TODO: Figure out how to get title
+                //$(".player-title").text( story.get( "title" ) );
                 $(".surface-player").addClass("center");
             },1000);
             

@@ -198,6 +198,9 @@ define([
                         if ( story && story.get("isAvailable") ) {
 
                             new Zeega.player({
+                                controls: {
+                                  arrows: true
+                                },
                                 autoplay: true,
                                 // data: story.attributes,
                             
@@ -206,12 +209,12 @@ define([
                                 //
                                 //  TODO: Investigate why passing previously requested data
                                 //  doesn't work.
-                                url: story.url(),
-                                next: ".next",
-                                prev: ".prev"
+                                url: story.url()
                             });
 
                             $(".surface-player").addClass("center");
+
+                            $(".player-title").text( story.get( "title" ) );
 
                         }
 
@@ -228,7 +231,7 @@ define([
 
             // TODO :: Move this to a new controls view for player
 
-            $(".close").click(function(){
+            $(".player-close").click(function(){
                 $(".ZEEGA-player").remove();
                 $(".surface-player").removeClass("center");
                 Sonic.router.navigate("", { silent : true });
