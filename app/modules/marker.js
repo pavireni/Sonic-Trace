@@ -199,7 +199,8 @@ define([
 
                             new Zeega.player({
                                 controls: {
-                                  arrows: true
+                                  arrows: true,
+                                  playpause: true
                                 },
                                 autoplay: true,
                                 // data: story.attributes,
