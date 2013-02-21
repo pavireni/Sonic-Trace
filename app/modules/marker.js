@@ -239,6 +239,18 @@ define([
                 Sonic.router.navigate("", { silent : true });
             });
 
+            $(".fullscreen").click(function(){
+                var $playerElem = $(".ZEEGA-player").get(0);
+
+                if ($playerElem.requestFullscreen) {
+                  $playerElem.requestFullscreen();
+                } else if ($playerElem.mozRequestFullScreen) {
+                  $playerElem.mozRequestFullScreen();
+                } else if ($playerElem.webkitRequestFullscreen) {
+                  $playerElem.webkitRequestFullscreen();
+                }
+            });
+
 
 
             // TODO: Determine a meaningful return value.

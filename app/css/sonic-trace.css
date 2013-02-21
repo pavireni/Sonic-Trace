@@ -111,6 +111,17 @@
   margin: 20px auto 0;
 }
 
+#zeega-player .fullscreen {
+  background: url(/app/img/fullscreen-icon.png);
+  bottom: 10px;
+  cursor: pointer;
+  height: 20px;
+  position: absolute;
+  right: 10px;
+  text-indent: -9999px;
+  width: 20px;
+  z-index: 100000;
+}
 
 .center {
   left:0;
