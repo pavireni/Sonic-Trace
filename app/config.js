@@ -22,7 +22,7 @@ require.config({
         bootstrap: "../vendor/bootstrap/js/bootstrap",
         es6shim: "../vendor/js/libs/es6",
         abstract: "../vendor/js/libs/abstract",
-        store: "../vendor/js/libs/store",
+        // store: "../vendor/js/libs/store",
 
         // Specialty
         zeegaplayer: "../vendor/zeegaplayer/dist/debug/zeega"

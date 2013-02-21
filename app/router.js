@@ -3,22 +3,21 @@ define([
 
     "modules/surface",
     "modules/story",
-    "modules/marker",
-    "modules/session"
+    "modules/marker"
 ],
 
-function( App, Surface, Story, Marker, Session ) {
+function( App, Surface, Story, Marker ) {
     var Router;
 
     // If this is the first visit, there will be no record of any
     // prior visits. For this visit, set "isFirst" to |true|.
     // Subsequent visits will see a valid "isFirst" record and will
     // therefore be set to false.
-    Session.set(
-        "isFirst", Session.get("isFirst") === undefined ? true : false
-    );
+    // Session.set(
+    //     "isFirst", Session.get("isFirst") === undefined ? true : false
+    // );
 
-    window.Session = Session;
+    //window.Session = Session;
 
     Router = Backbone.Router.extend({
         initialize: function() {
@@ -83,21 +82,7 @@ function( App, Surface, Story, Marker, Session ) {
 
 
         index: function() {
-            if ( Session.get("isFirst") ) {
-                console.log( "Is first visit..." );
-                // If first visit, show introductory video
-                this.intro();
-            } else {
-                // Check for new Marker items approx every 5s.
-                // This is super lame, but should do the job for
-                // at least the immediate future.
-                setInterval(function() {
-                    Marker.Items.fetch({
-                        update: true,
-                        add: true
-                    });
-                }, 5000);
-            }
+            
         },
 
         story: function( id ){
