@@ -106,7 +106,8 @@ function( App, Surface, Story, Marker, Session ) {
                 var player = new Zeega.player({
                     controls: {
                         arrows: true,
-                        playpause: true
+                        playpause: true,
+                        close: false
                     },
                     autoplay: true,
                     // data: story.attributes,
