@@ -171,6 +171,28 @@
   z-index: 100000;
 }
 
+#zeega-player .share {
+  background: #000;
+  bottom: 10px;
+  cursor: pointer;
+  height: 20px;
+  position: absolute;
+  right: 40px;
+  z-index: 100000;
+}
+
+#zeega-player .share .icons {
+  display: none;
+}
+
+#zeega-player h3 {
+  color: #fff;
+  display: inline;
+  margin: 0 5px;
+  line-height: 20px;
+  font-size: 12px;
+}
+
 #zeega-player .ZEEGA-player {
   font-size: 4px; /* only for scaling down the arrows, which are sized in ems */
 }
