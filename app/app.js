@@ -45,15 +45,14 @@ function( $, _, Backbone, Layout ) {
             // Put fetch into `async-mode`.
             var done = this.async();
 
+            path=path+"";
             // Concatenate the file extension.
-            if( _.indexOf( path, "app") > -1 ){
+            if( path.indexOf("app") > -1 ){
                 path = path + ".html";
             } else {
                 path = "app/templates/" + path + ".html";
             }
             
-            console.log(path);
-
             // If cached, use the compiled template.
             // if ( JST[ path ] ) {
             //     return JST[ path ];
