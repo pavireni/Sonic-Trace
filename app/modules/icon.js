@@ -157,7 +157,7 @@ define([], function() {
             }
         },
 
-        feature: {
+        burbuja: {
             construct: "Marker",
             args: function( opts ) {
                 return [
