@@ -171,6 +171,10 @@
   z-index: 100000;
 }
 
+#zeega-player .ZEEGA-player {
+  font-size: 4px; /* only for scaling down the arrows, which are sized in ems */
+}
+
 .center {
   left:0;
 }
