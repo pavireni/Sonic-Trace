@@ -2,7 +2,7 @@
 require.config({
 
     // Initialize the application with the main application file.
-    deps: [ "es6shim", "abstract", "zeegaplayer", "bootstrap", "main" ],
+    deps: [ "es6shim", "abstract", "layout", "zeegaplayer", "bootstrap", "main" ],
 
     paths: {
         // JavaScript folders.
@@ -25,7 +25,8 @@ require.config({
         // store: "../vendor/js/libs/store",
 
         // Specialty
-        zeegaplayer: "../vendor/zeegaplayer/dist/debug/zeega"
+        zeegaplayer: "../vendor/zeegaplayer/dist/debug/zeega",
+        layout: "../vendor/js/plugins/backbone.layoutmanager"
     },
 
     shim: {
@@ -50,6 +51,7 @@ require.config({
         bootstrap: [ "jquery" ],
 
         // Backbone.LayoutManager depends on Backbone.
-        "plugins/backbone.layoutmanager": [ "backbone" ]
+        layout : [ "backbone" ],
+        main: [ "layout" ]
     }
 });

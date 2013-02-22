@@ -6,10 +6,10 @@ define([
     // "store",
 
     // Plugins.
-    "plugins/backbone.layoutmanager"
+    "layout"
 ],
 
-function( $, _, Backbone ) {
+function( $, _, Backbone, Layout ) {
     var App, JST;
 
     // Provide a global location to place configuration settings and module
@@ -35,7 +35,7 @@ function( $, _, Backbone ) {
     };
 
     // Configure LayoutManager with Backbone Boilerplate defaults.
-    Backbone.LayoutManager.configure({
+    Backbone.Layout.configure({
         // Allow LayoutManager to augment Backbone.View.prototype.
         manage: true,
 
