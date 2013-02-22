@@ -23,6 +23,9 @@ function( App ) {
                 new L.StamenTileLayer( "watercolor" )
             );
 
+            map.addControl( new L.Control.Attribution().addAttribution("Map tiles by <a href=\"http://stamen.com\">Stamen Design</a>, under <a href=\"http://creativecommons.org/licenses/by/3.0\">CC BY 3.0</a>. Data by <a href=\"http://openstreetmap.org\">OpenStreetMap</a>, under <a href=\"http://creativecommons.org/licenses/by-sa/3.0\">CC BY SA</a>.") );
+
+
             // Add this Leaflet map surface to the global cache
             Sonic.surfaces[ this.domId ] = map;
         }
@@ -37,7 +40,8 @@ function( App ) {
             this.options = {
                 center: new L.LatLng( 34.02, -118.20 ),
                 zoom: 10,
-                zoomControl: true
+                zoomControl: true,
+                attributionControl: false
             };
 
             // Set the rendered element's id, this will be used

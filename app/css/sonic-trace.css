@@ -229,7 +229,7 @@
   z-index: 90;
 }
 
-.leaflet-control-attribution {
+#surface-mx .leaflet-control-attribution {
   display:none !important;
 }
 
