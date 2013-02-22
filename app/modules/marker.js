@@ -20,7 +20,7 @@ define([
 
         cache: true,
 
-        url: "http://alpha.zeega.org/api/items/73916/items",
+        url: "http://zeega.com/api/items/search?sort=date-desc&sort=date-desc&collection=73916&page=1&fields=id,media_geo_longitude,media_geo_latitude,tags,title",
 
         parse: function( obj ) {
             var ids = _.pluck( this.models, "id" );
