@@ -46,12 +46,14 @@ function( $, _, Backbone, Layout ) {
             var done = this.async();
 
             // Concatenate the file extension.
-            if( _.indexOf( path, "app" === 0 )){
+            if( _.indexOf( path, "app") > -1 ){
                 path = path + ".html";
             } else {
                 path = "app/templates/" + path + ".html";
             }
             
+            console.log(path);
+
             // If cached, use the compiled template.
             // if ( JST[ path ] ) {
             //     return JST[ path ];

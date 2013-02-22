@@ -12,20 +12,7 @@ function( App ) {
 
         tagName: "div",
 
-        initialize: function( domId, lat, lng, zoom, zoomControl ) {
-            console.log( "Initialize:Surface", arguments );
-
-            this.domId = domId;
-            this.options = {
-                center: new L.LatLng( lat, lng ),
-                zoom: zoom,
-                zoomControl: zoomControl
-            };
-
-            // Set the rendered element's id, this will be used
-            // by afterRender to locate the map container
-            $( this.el ).attr( "id", this.domId );
-        },
+        
         afterRender: function() {
             var map;
 
@@ -40,6 +27,43 @@ function( App ) {
             Sonic.surfaces[ this.domId ] = map;
         }
     });
+
+    // Workaround for compile issue
+
+    Surface.MainView = Surface.View.extend({
+        initialize: function( ) {
+
+            this.domId = "la";
+            this.options = {
+                center: new L.LatLng( 34.02, -118.20 ),
+                zoom: 10,
+                zoomControl: true
+            };
+
+            // Set the rendered element's id, this will be used
+            // by afterRender to locate the map container
+            $( this.el ).attr( "id", this.domId );
+        }
+    });
+
+    Surface.OriginView = Surface.View.extend({
+        initialize: function( ) {
+            
+
+            this.domId = "mx";
+            this.options = {
+                center: new L.LatLng( 23.16, -106.35 ),
+                zoom: 4,
+                zoomControl: false
+            };
+
+            // Set the rendered element's id, this will be used
+            // by afterRender to locate the map container
+            $( this.el ).attr( "id", this.domId );
+        }
+    });
+
+
 
     // Things Surface.View does...
     //
