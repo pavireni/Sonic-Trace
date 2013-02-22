@@ -3,10 +3,11 @@ define([
 
     "modules/surface",
     "modules/story",
-    "modules/marker"
+    "modules/marker",
+    "modules/intro"
 ],
 
-function( App, Surface, Story, Marker ) {
+function( App, Surface, Story, Marker, Intro ) {
     var Router;
 
     // If this is the first visit, there will be no record of any
@@ -82,7 +83,16 @@ function( App, Surface, Story, Marker ) {
 
 
         index: function() {
-            
+
+            $("body").scroll(function(){
+                return false;
+            });
+
+            var introView = new Intro.View();
+            $("body").append(introView.el);
+            introView.render();
+
+             console.log(introView.el);
         },
 
         story: function( id ){
