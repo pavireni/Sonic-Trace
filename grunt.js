@@ -13,6 +13,17 @@ module.exports = function(grunt) {
                     "app/img/zeegaplayer/": "vendor/zeegaplayer/dist/release/img/*"
                 },
                 options: { "basePath": "/", "flatten": true }
+            },
+            templates: {
+                files: {
+                    "dist/release/templates/": "app/templates/**",
+                    "dist/release/img/": "app/img/**"
+                },
+
+                options: {
+                    cwd: "/",
+                    flatten: false
+                }
             }
         },
 
