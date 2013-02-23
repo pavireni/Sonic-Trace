@@ -91,7 +91,6 @@ define([
                     // Make request for Zeega.Player data
 
                     icon.on("mouseover", function( event ) {
-                        console.log( "icon hovered...", mark.get("id"), event );
                        
 
                         var story,
@@ -140,7 +139,7 @@ define([
                     });
 
                     icon.on("mouseout", function( event ) {
-                        console.log("mouseout");
+                        
                         var point = event.target;
 
                         if ( point.options.icon ) {
@@ -164,7 +163,7 @@ define([
                         // By binding the click handler here, we create an
                         // upvar for |mark|
 
-                        console.log( "icon clicked...", mark.get("id"), event );
+                        
 
                         // Tasks Controlled by this event...
                         //
