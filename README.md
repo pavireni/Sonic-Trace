@@ -51,7 +51,7 @@ Content:
 - Update intro vimeo video id in [a link](app/templates/intro.html)
 - Update Zeega collection id in app/modules/marker.js
 - Supported icon types
-> burbuja : use tag icon-burbuja
+-- burbuja : use tag icon-burbuja
 > audio : use tag icon-audio
 > video : use tag icon-video
 > standard : default, leave untagged 
