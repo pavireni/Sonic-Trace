@@ -30,16 +30,21 @@ define([
         }
     });
 
-    // TODO load from json file and update with all locations in KML file (link below)
-    // https://maps.google.com/maps/ms?vps=2&hl=en&ie=UTF8&oe=UTF8&authuser=0&msa=0&output=kml&msid=218206009833964695943.0004d2c410d3d4fee71ea
+    //  Add new origin locations here
+    //      id          -- unique identifier
+    //      place_name  -- string displayed on origin map
+    //      tag         -- "sampleloc" matches tag "origin-sampleloc"
 
     Sonic.origins = new Origins.Collection([
+        
+        // Default location centers on Distrito Federal with text Mexico
+
         {
             "id":1,
-            "place_name":"Guatemala",
-            "tag":"guatemala",
-            "lat":15.783,
-            "lng":-90.231
+            "place_name":"Mexico",
+            "tag":"default",
+            "lat":19.246469,
+            "lng":-99.101349
 
         },
         {
@@ -324,12 +329,13 @@ define([
         },
         {
             "id":37,
-            "place_name":"Mexico",
-            "tag":"default",
-            "lat":19.246469,
-            "lng":-99.101349
+            "place_name":"Guatemala",
+            "tag":"guatemala",
+            "lat":15.783,
+            "lng":-90.231
 
         }
+        
 
 
 
