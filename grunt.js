@@ -137,6 +137,9 @@ module.exports = function(grunt) {
                 // Map `server:debug` to `debug` folders.
                 folders: {
                     "app": "dist/debug",
+                    "app/templates": "app/templates",
+                    "app/img": "app/img",
+                    "vendor/zeegaplayer": "vendor/zeegaplayer",
                     "vendor/js/libs": "dist/debug",
                     "app/css": "dist/debug"
                 }
@@ -152,6 +155,9 @@ module.exports = function(grunt) {
                 // Map `server:release` to `release` folders.
                 folders: {
                     "app": "dist/release",
+                    "app/templates": "app/templates",
+                    "app/img": "app/img",
+                    "vendor/zeegaplayer": "vendor/zeegaplayer",
                     "vendor/js/libs": "dist/release",
                     "app/css": "dist/release"
                 }
