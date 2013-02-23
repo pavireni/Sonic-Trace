@@ -14,7 +14,7 @@ define([
         },
         parse: function( obj ) {
             var data = obj.items[ 0 ];
-            console.log(data);
+            // console.log(data);
 
             // API requests are coming up empty handed :(
             if ( !data ) {
