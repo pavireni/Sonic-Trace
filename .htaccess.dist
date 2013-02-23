@@ -48,4 +48,5 @@ DirectorySlash Off
 # Map resources to release distribution
 
 RewriteRule ^dist/img/(.*)$ dist/release/img/$1 [NC,L]
+RewriteRule ^app/css/(.*)$ dist/release/$1 [NC,L]
 RewriteRule ^app/(.*)$ dist/release/$1 [NC,L]
