@@ -11,12 +11,14 @@
   <script>
         
         window.console = {log: function() {}};
+        
+        // Zeega collection Id for stories to be displayed on Map
         localStorage.collectionId = 73916;
 
-        // production
+        // production api path
         localStorage.api = 'zeegaapi';
 
-        // dev 
+        // dev api path
         // localStorage.api = 'http://alpha.zeega.org/api';
         
   </script>
