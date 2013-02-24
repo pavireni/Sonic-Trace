@@ -1,4 +1,8 @@
-### Sonic Trace
+# Sonic Trace
+
+
+Sonic Trace is KCRW's story-telling project that begins in the heart of Los Angeles and crosses into Mexico and Central America.
+
 
 ## Setup
 
@@ -29,33 +33,45 @@ bbb release
 
 ## Production Install
 
-- clone repository into web root directory
+### Using ssh and git
+
+Clone repository into web directory and checkout stable branch.
 
 ```bash
-cd /path/to/webroot
+cd /path/to/web
 git clone git@github.com:Zeega/Sonic-Trace.git .
+git checkout stable
 ```
 
-- rename htaccess and index dist files
+Copy htaccess and index dist files.
 
 ```bash
-mv .htaccess.dist .htaccess
-mv index.html.dist index.html
+cp .htaccess.dist .htaccess
+cp index.html.dist index.html
 ```
+### Using ftp
+
+Download and unzip stable branch from [here](https://github.com/Zeega/Sonic-Trace/archive/stable.zip).
+
+Rename .htaccess.dist and index.html.dist to .htaccess and index.html, repestively.
+
+Upload to web directory.
+
+
+
+## Content:
+
+- Update intro Vimeo video id in [app/templates/intro.html](app/templates/intro.html)
+- Update Zeega collection id in [app/modules/marker.js](app/modules/marker.js)
+- For a list of supported origins see [app/modules/origins.js](app/modules/origins.js)
+- Supported icon types
+    * burbuja : use tag icon-burbuja
+    * audio : use tag icon-audio
+    * video : use tag icon-video
+    * standard : default, leave untagged 
 
 
 ## Notes
-
-Content:
-
-- Update intro vimeo video id in [a link](app/templates/intro.html)
-- Update Zeega collection id in app/modules/marker.js
-- Supported icon types
--- burbuja : use tag icon-burbuja
-> audio : use tag icon-audio
-> video : use tag icon-video
-> standard : default, leave untagged 
-- For a list of supported origins see app/templates
 
 Vendor deps:
 
