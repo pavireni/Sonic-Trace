@@ -1,7 +1,7 @@
 # Sonic Trace
 
 
-Sonic Trace is KCRW's story-telling project that begins in the heart of Los Angeles and crosses into Mexico and Central America.
+Sonic Trace is a new story-telling project that begins in the heart of Los Angeles and crosses into Mexico, El Salvador, Guatemala and Honduras produced in partnership with KCRW, AIR and Zeega. 
 
 
 ## Setup
@@ -65,7 +65,7 @@ Upload folder contents to web directory.
 
 - Update intro Vimeo video id in [app/templates/intro.html](app/templates/intro.html)
 - Update Zeega collection id in [app/modules/marker.js](app/modules/marker.js)
-- For a list of supported origins see [app/modules/origins.js](app/modules/origins.js)
+- ForThe geodata for the origin map in the lower left is determined by tags associated with each Zeega story. The list of supported origin tags is [app/modules/origins.js](app/modules/origins.js)
 - Supported icon types
     * burbuja : use tag icon-burbuja
     * audio : use tag icon-audio
