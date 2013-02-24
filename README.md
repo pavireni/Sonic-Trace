@@ -1,7 +1,7 @@
 # Sonic Trace
 
 
-Sonic Trace is KCRW's story-telling project that begins in the heart of Los Angeles and crosses into Mexico and Central America.
+Sonic Trace is a new story-telling project that begins in the heart of Los Angeles and crosses into Mexico, El Salvador, Guatemala and Honduras produced in partnership with KCRW, AIR and Zeega. 
 
 
 ## Setup
@@ -33,6 +33,8 @@ bbb release
 
 ## Production Install
 
+Tested on Linux version 2.6.18-028stab101.1 with Apache/2.2.22. Be sure mod_rewrite module is installed. htaccess file may need to be modified if app is not run from root directory.
+
 ### Using ssh and git
 
 Clone repository into web directory and checkout stable branch.
@@ -55,7 +57,7 @@ Download and unzip stable branch from [here](https://github.com/Zeega/Sonic-Trac
 
 Rename .htaccess.dist and index.html.dist to .htaccess and index.html, repestively.
 
-Upload to web directory.
+Upload folder contents to web directory.
 
 
 
@@ -63,7 +65,7 @@ Upload to web directory.
 
 - Update intro Vimeo video id in [app/templates/intro.html](app/templates/intro.html)
 - Update Zeega collection id in [app/modules/marker.js](app/modules/marker.js)
-- For a list of supported origins see [app/modules/origins.js](app/modules/origins.js)
+- The geodata for the origin map in the lower left is determined by tags associated with each Zeega story. The list of supported origin tags is [app/modules/origins.js](app/modules/origins.js)
 - Supported icon types
     * burbuja : use tag icon-burbuja
     * audio : use tag icon-audio
