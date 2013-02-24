@@ -119,8 +119,8 @@ function( App, Surface, Story, Marker, Intro ) {
                 player.on("sequence_enter", function(info) {
                     $(".player-title").text( player.project.get( "title" ) );
 
-                    $(".share-twitter").attr("href", "https://twitter.com/intent/tweet?original_referer=http://sonictrace.org/#story/" + id + "&text=Sonic%20Trace%3A%20" + player.project.get( "title" ) + "&url=http://sonictrace.org/#story/" + id );
-                    $(".share-fb").attr("href", "http://www.facebook.com/sharer.php?u=http://sonictrace.org/" + id );
+                    $(".share-twitter").attr("href", "https://twitter.com/intent/tweet?original_referer=http://sonictrace.org/%23story/" + id + "&text=Sonic%20Trace%3A%20" + player.project.get( "title" ) + "&url=http://sonictrace.org/%23story/" + id );
+                    $(".share-fb").attr("href", "http://www.facebook.com/sharer.php?u=http://sonictrace.org/%23story/" + id );
                     $(".share-email").attr("href", "mailto:friend@example.com?subject=Check out this story on Sonic Trace!&body=http://sonictrace.org/" + id );
                 });
                 // TODO: Figure out how to get title
