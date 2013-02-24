@@ -53,10 +53,9 @@ function( App ) {
     Surface.OriginView = Surface.View.extend({
         initialize: function( ) {
             
-
             this.domId = "mx";
             this.options = {
-                center: new L.LatLng( 23.16, -106.35 ),
+                center: new L.LatLng( 19.246469, -99.101349 ),
                 zoom: 4,
                 zoomControl: false
             };
