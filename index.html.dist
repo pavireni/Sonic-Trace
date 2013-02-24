@@ -10,6 +10,8 @@
   <!-- For release only. -->
   <script>
         localStorage.api = 'zeegaapi';
+        // dev setting
+        // localStorage.api = 'http://alpha.zeega.org/api';
         window.console = {log: function() {}};
   </script>
 

@@ -10,7 +10,7 @@ define([
             isAvailable: false
         },
         url: function() {
-            return "http://alpha.zeega.org/api/items/" + this.id;
+            return localStorage.api + "/items/" + this.id;
         },
         parse: function( obj ) {
             var data = obj.items[ 0 ];

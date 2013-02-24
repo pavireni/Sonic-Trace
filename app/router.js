@@ -112,7 +112,7 @@ function( App, Surface, Story, Marker, Intro ) {
                     //
                     //  TODO: Investigate why passing previously requested data
                     //  doesn't work.
-                    url: "http://alpha.zeega.org/api/items/"+id
+                    url: localStorage.api + "/items/"+id
                 });
 
                 // we have to do this because the story collection may or may not be loaded
