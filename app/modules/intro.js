@@ -21,7 +21,8 @@ function( App ) {
 
         events: {
             "click .skip": function(){
-                $("#intro").fadeOut("fast").remove();
+                window.onFinish();
+                //$("#intro").fadeOut("fast").remove();
             }
         },
         
@@ -71,6 +72,7 @@ function( App ) {
             };
 
             window.onFinish = function() {
+                post("pause");
                 $("#intro").fadeOut("fast").remove();
             };
 
