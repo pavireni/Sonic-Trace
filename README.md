@@ -33,7 +33,7 @@ Upload folder contents to web directory.
 
 
 
-## Content:
+## Content
 
 - Update intro Vimeo video id in [app/templates/intro.html](app/templates/intro.html)
 - Update Zeega collection id in [index.html](index.html.dist)
@@ -47,7 +47,7 @@ Upload folder contents to web directory.
     * standard : default, leave untagged 
 
 
-## Developers:
+## Developers
 
 ### Setup
 
