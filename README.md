@@ -48,7 +48,7 @@ Upload folder contents to web directory.
 
 ### Map Content Management
 
-Stories are created using Zeega's web-based applications for creating multimedia narratives and organizing collections. To create stories, login at http://zeega.com and then "Create a New Zeega." After composing the story, click "Publish." 
+Stories are created using Zeega's web-based applications for creating multimedia stories and organizing collections. To create stories, login at http://zeega.com and then "Create a New Zeega." After composing the story, click "Publish." 
 
 To curate which stories appear on the main map, access http://zeega.com/library. 
 
@@ -59,6 +59,7 @@ To curate which stories appear on the main map, access http://zeega.com/library.
 - In the lower-left, assign the relevant tags for the icon and origin (make sure to always hit "Enter" after tags)
 - Search the map to find the approximate location. Drag the pin to precisely locate the story
 - After locating the story, click the √ icon in the upper-left of the map below the +/- zoom controls 
+- To have the story display on the main map, drag it to the "Map Collection" on the left
 
 <i>Notes</i>
 
