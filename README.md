@@ -46,6 +46,7 @@ Upload folder contents to web directory.
     * video : use tag icon-video
     * standard : default, leave untagged 
 
+Map
 
 ## Developers
 
