@@ -50,3 +50,10 @@ DirectorySlash Off
 RewriteRule ^dist/img/(.*)$ dist/release/img/$1 [NC,L]
 RewriteRule ^app/css/(.*)$ dist/release/$1 [NC,L]
 RewriteRule ^app/(.*)$ dist/release/$1 [NC,L]
+
+# Proxy for Zeega API
+
+RewriteRule ^zeegaapi/(.*)$ http://alpha.zeega.org/api/$1 [P]
+
+
+
