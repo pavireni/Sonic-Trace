@@ -55,7 +55,7 @@ Download and unzip stable branch from [here](https://github.com/Zeega/Sonic-Trac
 
 Rename .htaccess.dist and index.html.dist to .htaccess and index.html, repestively.
 
-Upload to web directory.
+Upload folder contents to web directory.
 
 
 
