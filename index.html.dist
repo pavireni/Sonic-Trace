@@ -7,12 +7,18 @@
 
   <title>Sonic Trace</title>
 
-  <!-- For release only. -->
+
   <script>
-        localStorage.api = 'zeegaapi';
-        // dev setting
-        // localStorage.api = 'http://alpha.zeega.org/api';
+        
         window.console = {log: function() {}};
+        localStorage.collectionId = 73916;
+
+        // production
+        localStorage.api = 'zeegaapi';
+
+        // dev 
+        // localStorage.api = 'http://alpha.zeega.org/api';
+        
   </script>
 
   <!-- Application styles. -->
