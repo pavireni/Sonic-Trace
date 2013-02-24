@@ -46,6 +46,25 @@ Upload folder contents to web directory.
     * video : use tag icon-video
     * standard : default, leave untagged 
 
+### Map Content Management
+
+Stories are created using Zeega's web-based applications for creating multimedia narratives and organizing collections. To create stories, login at http://zeega.com and then "Create a New Zeega." After composing the story, click "Publish." 
+
+To curate which stories appear on the main map, access http://zeega.com/library. 
+
+- From the "Items" dropdown select "Zeegas"
+- Your published Zeegas will then be visible as thumbnails
+- Click on the Zeega thumbnail to edit the story's metadata
+- The text displayed when hovering on an icon on the map is the title associated with the Zeega. Click the pencil icon next to the title to make changes. Make sure to click "Save Changes" in the bottom right after finishing editing.
+- In the lower-left, assign the relevant tags for the icon and origin (make sure to always hit "Enter" after tags)
+- Search the map to find the approximate location. Drag the pin to precisely locate the story
+- After locating the story, click the √ icon in the upper-left of the map below the +/- zoom controls 
+
+<i>Notes</i>
+
+- There is a noticeable 5 minute time lag between geolocating an item and the geodata appearing on the item. This is a result of syncing databases. Do not be alarmed if the mapped location is not visible until after the 5 minutes and the sync is complete! 
+- It is not possible to edit the metadata of an item if you have clicked to open it from the map collection. To edit metadata, you must click the item from the main library workspace.
+
 
 ## Developers
 
