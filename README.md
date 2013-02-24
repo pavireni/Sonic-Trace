@@ -65,7 +65,7 @@ Upload folder contents to web directory.
 
 - Update intro Vimeo video id in [app/templates/intro.html](app/templates/intro.html)
 - Update Zeega collection id in [app/modules/marker.js](app/modules/marker.js)
-- ForThe geodata for the origin map in the lower left is determined by tags associated with each Zeega story. The list of supported origin tags is [app/modules/origins.js](app/modules/origins.js)
+- The geodata for the origin map in the lower left is determined by tags associated with each Zeega story. The list of supported origin tags is [app/modules/origins.js](app/modules/origins.js)
 - Supported icon types
     * burbuja : use tag icon-burbuja
     * audio : use tag icon-audio
