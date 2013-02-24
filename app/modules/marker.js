@@ -217,7 +217,7 @@ define([
 
                             $(".player-title").text( story.get( "title" ) );
 
-                            $(".share-twitter").attr("href", "https://twitter.com/intent/tweet?original_referer=http://sonictrace.org/%23story/" + story.get("id") + "&text=Sonic%20Trace%3A%20" + story.get( "title" ) + "&url=http://http://sonictrace.org/%23story/" + story.get( "id" ) );
+                            $(".share-twitter").attr("href", "https://twitter.com/intent/tweet?original_referer=http://sonictrace.org/%23story/" + story.get("id") + "&text=Sonic%20Trace%3A%20" + story.get( "title" ) + "&url=http://sonictrace.org/%23story/" + story.get( "id" ) );
                             $(".share-fb").attr("href", "http://www.facebook.com/sharer.php?u=http://sonictrace.org/%23story/" + story.get("id") );
                             $(".share-email").attr("href", "mailto:friend@example.com?subject=Check out this story on Sonic Trace!&body=http://sonictrace.org/" + story.get("id") );
 

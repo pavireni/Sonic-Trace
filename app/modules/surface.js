@@ -23,7 +23,7 @@ function( App ) {
                 new L.StamenTileLayer( "watercolor" )
             );
 
-            map.addControl( new L.Control.Attribution().addAttribution("Map tiles by <a href=\"http://stamen.com\">Stamen Design</a>, under <a href=\"http://creativecommons.org/licenses/by/3.0\">CC BY 3.0</a>. Data by <a href=\"http://openstreetmap.org\">OpenStreetMap</a>, under <a href=\"http://creativecommons.org/licenses/by-sa/3.0\">CC BY SA</a>.") );
+            map.addControl( new L.Control.Attribution().addAttribution("Map tiles by <a href=\"http://stamen.com\">Stamen Design</a>, under <a href=\"http://creativecommons.org/licenses/by/3.0\">CC BY 3.0</a>. Data by <a href=\"http://openstreetmap.org\">OpenStreetMap</a>, under <a href=\"http://creativecommons.org/licenses/by-sa/3.0\">CC BY SA</a>. Stories made with <a href='http://zeega.com'>Zeega</a>") );
 
 
             // Add this Leaflet map surface to the global cache
