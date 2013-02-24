@@ -3,34 +3,6 @@
 
 Sonic Trace is a new story-telling project that begins in the heart of Los Angeles and crosses into Mexico, El Salvador, Guatemala and Honduras produced in partnership with KCRW, AIR and Zeega. 
 
-
-## Setup
-
-```bash
-npm install
-```
-
-```bash
-git submodule update --init --recursive
-```
-
-## Build Commands
-
-```bash
-bbb watch
-```
-
-```bash
-bbb debug
-```
-
-```bash
-bbb release
-```
-
-
-
-
 ## Production Install
 
 Tested on Linux version 2.6.18-028stab101.1 with Apache/2.2.22. Be sure mod_rewrite module is installed. htaccess file may need to be modified if app is not run from root directory.
@@ -64,8 +36,10 @@ Upload folder contents to web directory.
 ## Content:
 
 - Update intro Vimeo video id in [app/templates/intro.html](app/templates/intro.html)
-- Update Zeega collection id in [app/modules/marker.js](app/modules/marker.js)
-- The geodata for the origin map in the lower left is determined by tags associated with each Zeega story. The list of supported origin tags is [app/modules/origins.js](app/modules/origins.js)
+- Update Zeega collection id in [index.html](index.html.dist)
+- The geodata for the origin map in the lower left is determined by tags associated with each Zeega story. 
+  The list of supported origin tags is in [app/modules/origins.js](app/modules/origins.js). 
+  Note that updating this file requires recompiling the release code.
 - Supported icon types
     * burbuja : use tag icon-burbuja
     * audio : use tag icon-audio
@@ -73,7 +47,36 @@ Upload folder contents to web directory.
     * standard : default, leave untagged 
 
 
-## Notes
+## Developers:
+
+### Setup
+
+```bash
+npm install
+```
+
+```bash
+git submodule update --init --recursive
+```
+
+### Build Commands
+
+```bash
+bbb watch
+```
+
+```bash
+bbb debug
+```
+
+```bash
+bbb release
+```
+
+
+
+
+### Notes
 
 Vendor deps:
 
