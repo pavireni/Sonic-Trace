@@ -48,7 +48,7 @@ Upload folder contents to web directory.
 
 ### Map Content Management
 
-Stories are created using Zeega's web-based applications for creating multimedia stories and organizing collections. To create stories, login at http://zeega.com and then "Create a New Zeega." After composing the story, click "Publish." 
+Stories and the Zeega about the Burbuja's current location are created using Zeega's web-based applications for authoring multimedia stories and organizing collections. To create stories and the Zeega about the Burbuja's current location, login at http://zeega.com and then "Create a New Zeega." After composing the story, click "Publish." 
 
 To curate which stories appear on the main map, access http://zeega.com/library. 
 
@@ -56,7 +56,7 @@ To curate which stories appear on the main map, access http://zeega.com/library.
 - Your published Zeegas will then be visible as thumbnails
 - Click on the Zeega thumbnail to edit the story's metadata
 - The text displayed when hovering on an icon on the map is the title associated with the Zeega. Click the pencil icon next to the title to make changes. Make sure to click "Save Changes" in the bottom right after finishing editing.
-- In the lower-left, assign the relevant tags for the icon and origin (make sure to always hit "Enter" after tags)
+- In the lower-left, assign the relevant tags for the icon and origin. Make sure to always hit "Enter" after tags.
 - Search the map to find the approximate location. Drag the pin to precisely locate the story
 - After locating the story, click the √ icon in the upper-left of the map below the +/- zoom controls 
 - To have the story display on the main map, drag it to the "Map Collection" on the left
