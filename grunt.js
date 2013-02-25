@@ -138,11 +138,9 @@ module.exports = function(grunt) {
         //  To learn more about using the server task, please refer to the code
         //  until documentation has been written.
         server: {
-            // Ensure the favicon is mapped correctly.
-            files: { "favicon.ico": "favicon.ico" },
 
             debug: {
-                // Ensure the favicon is mapped correctly.
+            
                 files: "<config:server.files>",
 
                 // Map `server:debug` to `debug` folders.
