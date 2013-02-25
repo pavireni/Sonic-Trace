@@ -1,7 +1,7 @@
 # Sonic Trace
 
 
-Sonic Trace is a new story-telling project that begins in the heart of Los Angeles and crosses into Mexico, El Salvador, Guatemala and Honduras produced in partnership with KCRW, AIR and Zeega. 
+Sonic Trace is a new story-telling project that begins in the heart of Los Angeles and crosses into Mexico, El Salvador, Guatemala and Honduras produced by Anayansi Diaz-Cortes & Eric Pearse Chavez in partnership with KCRW, AIR and Zeega. 
 
 ## Production Install
 
