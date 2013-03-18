@@ -43,7 +43,7 @@ function( App ) {
             // Handle messages received from the player
             function onMessageReceived( e ) {
                 var data = JSON.parse( e.data );
-                console.log(e);
+
                 switch (data.event) {
                     case "ready":
                         onReady();

@@ -54,13 +54,24 @@ define([
 
             this.forEach(function( mark, k ) {
                 var latlng, icon, iconLabel, iconTypes;
-
                 if ( mark.get("icon") === null ) {
 
-                    latlng = [
-                        mark.get("media_geo_latitude"),
-                        mark.get("media_geo_longitude")
-                    ];
+
+                    if( _.isNumber(mark.get("media_geo_latitude")) && _.isNumber(mark.get("media_geo_longitude"))){
+
+                        latlng = [
+                            mark.get("media_geo_latitude"),
+                            mark.get("media_geo_longitude")
+                        ];
+
+                    } else {
+
+
+                        latlng = [ 40, 40 ];
+
+                    }
+
+                    
 
                     // Parse tags to check for icon to be used
 

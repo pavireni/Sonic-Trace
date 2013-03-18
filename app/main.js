@@ -25,7 +25,7 @@ function( App, DOM, Router ) {
         root: App.root
     });
 
-    console.log( "Main:", App );
+
 
     // All navigation that is relative should be passed through the navigate
     // method, to be processed by the router. If the link has a `data-bypass`

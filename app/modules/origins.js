@@ -20,7 +20,7 @@ define([
             } else {
                 candidate = "default";
             }
-            console.log(candidate);
+            
             origin = _.find( _.toArray( this.models ), function( model ){
                 return model.get("tag") === candidate;
             });
