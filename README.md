@@ -1,7 +1,7 @@
 # Sonic Trace
 
 
-Sonic Trace is a new story-telling project that begins in the heart of Los Angeles and crosses into Mexico, El Salvador, Guatemala and Honduras produced in partnership with KCRW, AIR and Zeega. 
+Sonic Trace is a new story-telling project that begins in the heart of Los Angeles and crosses into Mexico, El Salvador, Guatemala and Honduras produced by Anayansi Diaz-Cortes & Eric Pearse Chavez in partnership with KCRW, AIR and Zeega. 
 
 ## Production Install
 
@@ -35,7 +35,7 @@ Upload folder contents to web directory.
 
 ## Content
 
-- Update intro Vimeo video id in [app/templates/intro.html](app/templates/intro.html)
+- Update the intro video by changing the file of this Vimeo video: http://vimeo.com/59031997. Or to change to another Vimeo video, change the ID in [app/templates/intro.html](app/templates/intro.html)
 - Update Zeega collection id in [index.html](index.html.dist)
 - The geodata for the origin map in the lower left is determined by tags associated with each Zeega story. 
   The list of supported origin tags is in [app/modules/origins.js](app/modules/origins.js). 
