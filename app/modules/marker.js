@@ -49,7 +49,7 @@ define([
             //
             //
 
-            
+
 
 
             this.forEach(function( mark, k ) {
@@ -129,6 +129,29 @@ define([
 
                         origin = Sonic.origins.match(mark);
                         Sonic.surfaces.mx.panTo( new L.LatLng( origin.get("lat"), origin.get("lng")));
+
+                        latlng2 = [origin.get("lat"), origin.get("lng")];
+
+                    //code for line drawing using CSS
+                        var c=document.getElementById("arcCanvas");
+                        var ctx=c.getContext("2d");
+                        stz=[event.originalEvent.pageX,event.originalEvent.pageY];  //point on hover
+                        etz=[108,$(window).height()-140];   //point on minimap
+                        ctx.canvas.width=stz[0]-etz[0]-20;
+                        ctx.canvas.height=$(window).height();
+                        $('#arcCanvas').show();
+                        $("#arcCanvas").offset({ top: 0, left: 108});
+                        ctx.beginPath();
+                        ctx.moveTo(14,$(window).height()-120);
+                        ctx.quadraticCurveTo(ctx.canvas.width/2-10,0,stz[0]-120,stz[1]); 
+                        ctx.shadowOffsetY=20;
+                        ctx.shadowBlur=30;
+                        ctx.shadowColor="#555555";
+                        ctx.scale(10,10);
+                        ctx.strokeStyle="#555555";
+                        ctx.stroke();
+                    //end of arc
+
                         $(".origin-label").fadeOut("fast", function(){
                             $(this).html( origin.get("place_name") ).fadeIn("slow");
                         });
@@ -153,6 +176,8 @@ define([
                         
                         var point = event.target;
 
+                        $("arcCanvas").attr("top","10");
+                        $("#arcCanvas").hide();
                         if ( point.options.icon ) {
                             point.setOpacity(0.7);
                         } else {
@@ -207,7 +232,7 @@ define([
                         //
                         if ( story && story.get("isAvailable") ) {
 
-                            new Zeega.player({
+                        var zplayer = new Zeega.player({
                                 controls: {
                                   arrows: true,
                                   playpause: true,
@@ -227,6 +252,12 @@ define([
                             $(".surface-player").addClass("center");
 
                             $(".player-title").text( story.get( "title" ) );
+                            var sequencesArray = story.get("text").sequences;
+                            var trackList="<ul style='list-style-type: none;'>";
+                            for (var i = 0; i < sequencesArray.length; i++) {                 
+                                trackList = trackList + "<li>"+(i+1)+". "+sequencesArray[i].title+"</li>";
+                            }
+                            $(".under-story").html(trackList+"</ul>");
 
                             $(".share-twitter").attr("href", "https://twitter.com/intent/tweet?original_referer=http://sonictrace.org/%23story/" + story.get("id") + "&text=Sonic%20Trace%3A%20" + story.get( "title" ) + "&url=http://sonictrace.org/%23story/" + story.get( "id" ) );
                             $(".share-fb").attr("href", "http://www.facebook.com/sharer.php?u=http://sonictrace.org/%23story/" + story.get("id") );

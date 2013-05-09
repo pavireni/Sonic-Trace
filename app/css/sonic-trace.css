@@ -314,3 +314,61 @@
 .leaflet-popup-pane .leaflet-popup-close-button {
   display: none;
 }
+  #dialog {
+    position: relative;
+    width: 100px;
+    height: 30px;
+    border: 2px solid black;
+    padding: 5px;
+    background-color: #fff;
+    opacity: 0.8;
+    z-index: 100;
+    display: none;
+    font-family: 'Permanent Marker';
+    font-style: normal;
+    font-weight: 400;
+  }
+
+  .hoverList {
+  position: fixed;
+  z-index: 10;
+  height: 32px;
+  top: 124px;
+  right: 281px;
+}
+
+.hoverList li{
+  list-style-type: none;
+}
+
+
+#intro .under-text{
+  font: normal 20px/14px 'Permanent Marker', cursive;
+  color:white;
+  position: absolute;
+  top: 562px;
+  text-align: center;
+  width: 100%;
+  cursor: crosshair;
+}
+
+#arcCanvas {
+    position: absolute;
+    left: 300px;
+    top: 50px;
+    display: none;
+    opacity: 2;
+    z-index: 100;
+}
+
+.under-story{
+  font: normal 24px/16px 'Permanent Marker';
+  color:white;
+  position: absolute;
+  top: 405px;
+  left: 30px;
+  text-align: left;
+  width: 90%;
+  height: 80px;
+  overflow-y: hidden;
+}
