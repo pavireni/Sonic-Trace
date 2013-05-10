@@ -137,12 +137,12 @@ define([
                         var ctx=c.getContext("2d");
                         stz=[event.originalEvent.pageX,event.originalEvent.pageY];  //point on hover
                         etz=[108,$(window).height()-140];   //point on minimap
-                        ctx.canvas.width=stz[0]-etz[0]-20;
+                        ctx.canvas.width=stz[0]-etz[0];
                         ctx.canvas.height=$(window).height();
                         $('#arcCanvas').show();
                         $("#arcCanvas").offset({ top: 0, left: 108});
                         ctx.beginPath();
-                        ctx.moveTo(14,$(window).height()-120);
+                        ctx.moveTo(10,$(window).height()-140);
                         ctx.quadraticCurveTo(ctx.canvas.width/2-10,0,stz[0]-120,stz[1]); 
                         ctx.shadowOffsetY=20;
                         ctx.shadowBlur=30;
