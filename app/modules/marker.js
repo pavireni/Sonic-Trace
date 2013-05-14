@@ -142,13 +142,18 @@ define([
                         $('#arcCanvas').show();
                         $("#arcCanvas").offset({ top: 0, left: 108});
                         ctx.beginPath();
+                        var grd=ctx.createLinearGradient(10,0,(stz[0]-120) ,0);
+                        grd.addColorStop(0,"transparent");
+                        grd.addColorStop(0.10,"#555555");
+                        grd.addColorStop(0.90,"#555555");
+                        grd.addColorStop(1,"transparent");
                         ctx.moveTo(10,$(window).height()-140);
                         ctx.quadraticCurveTo(ctx.canvas.width/2-10,0,stz[0]-120,stz[1]); 
                         ctx.shadowOffsetY=20;
                         ctx.shadowBlur=30;
                         ctx.shadowColor="#555555";
-                        ctx.scale(10,10);
-                        ctx.strokeStyle="#555555";
+                        ctx.lineWidth=10;
+                        ctx.strokeStyle=grd;
                         ctx.stroke();
                     //end of arc
 
