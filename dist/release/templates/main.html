@@ -1,10 +1,18 @@
 <img class="logo" src="/app/img/logo.png" alt="Sonic Trace / KCRW" width="259" height="170">
 
 <ul class="main-navigation">
-	<li><a class="about" href="http://sonictrace.kcrw.com/blog/about" target="_blank">About</a></li>
-	<li><a class="your-story" href="http://sonictrace.kcrw.com/blog/2013/01/add-your-story-inside-la-burbuja/" target="_blank">Your Story</a></li>
-	<li><a class="blog" href="http://sonictrace.kcrw.com/blog" target="_blank">Blog</a></li>
+	<li ><a  class="about" href="http://sonictrace.kcrw.com/blog/about" target="_blank" onMousemove="onhover(event,'Quiénes Somos')" ; onMouseout="onexit()">About</a></li>
+	<li><a class="your-story" href="http://sonictrace.kcrw.com/blog/2013/01/add-your-story-inside-la-burbuja/" target="_blank" onMousemove="onhover(event,'Tu Historia')" ; onMouseout="onexit()">Your Story</a></li>
+	<li><a class="blog" href="http://sonictrace.kcrw.com/blog" target="_blank" onMousemove="onhover(event,'Blog')" ; onMouseout="onexit()">Blog</a></li>
 </ul>
+
+<!-- For canvas, that is the arc from node to map -->
+<canvas id="arcCanvas"></canvas>
+
+<ul class="hoverList"><li><li><div id="dialog"></div></li></li></ul>
+
+<!-- Script for hover-->
+<script src="hoverText.js"></script>
 
 <div id="surface-la" class="surface">
 If this is visible, something went wrong
@@ -34,6 +42,7 @@ If this is visible, something went wrong
         <h3>share</h3>
       </div>
     </div>
+    <div class="under-story"><p>Tracks Added</p></div>
   </div>
 </div>
 
