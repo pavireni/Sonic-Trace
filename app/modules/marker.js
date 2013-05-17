@@ -12,7 +12,7 @@ define([
         defaults: {
             icon: null,
             latlng: null
-        }   
+        }
     });
 
     Marker.Collection = Backbone.Collection.extend({
