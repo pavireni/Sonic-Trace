@@ -1,0 +1,17 @@
+this["JST"] = this["JST"] || {};
+
+this["JST"]["app/templates/intro.html"] = function(obj){
+var __p='';var print=function(){__p+=Array.prototype.join.call(arguments, '')};
+with(obj||{}){
+__p+='\n<div class="intro-overlay">\n  <div class="video-wrapper">\n    <iframe id=\'intro-player\' src=\'http://player.vimeo.com/video/59031997?api=1&autoplay=1&portrait=0&byline=0&player_id=player_1\'  width=\'600px\' height=\'340px\' frameborder=\'0\' webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>\n  </div>\n  <span class="skip">SKIP INTRO </span>\n  <div class="under-text"><p>Sonic Trace maps the stories of LA\'s immigrants, voice by voice. \nClick on the icons to explore</p></div>\n</div>\n';
+}
+return __p;
+};
+
+this["JST"]["app/templates/main.html"] = function(obj){
+var __p='';var print=function(){__p+=Array.prototype.join.call(arguments, '')};
+with(obj||{}){
+__p+='<img class="logo" src="/app/img/logo.png" alt="Sonic Trace / KCRW" width="259" height="170">\n\n<ul class="main-navigation">\n\t<li ><a  class="about" href="http://sonictrace.kcrw.com/blog/about" target="_blank" onMousemove="onhover(event,\'Quiénes Somos\')" ; onMouseout="onexit()">About</a></li>\n\t<li><a class="your-story" href="http://sonictrace.kcrw.com/blog/2013/01/add-your-story-inside-la-burbuja/" target="_blank" onMousemove="onhover(event,\'Tu Historia\')" ; onMouseout="onexit()">Your Story</a></li>\n\t<li><a class="blog" href="http://sonictrace.kcrw.com/blog" target="_blank" onMousemove="onhover(event,\'Blog\')" ; onMouseout="onexit()">Blog</a></li>\n</ul>\n\n<!-- For canvas, that is the arc from node to map -->\n<canvas id="arcCanvas"></canvas>\n\n<ul class="hoverList"><li><li><div id="dialog"></div></li></li></ul>\n\n<!-- Script for hover-->\n<script src="hoverText.js"></script>\n\n<div id="surface-la" class="surface">\nIf this is visible, something went wrong\n</div>\n\n<div id="surface-mx" class="surface">\nIf this is visible, something went wrong\n</div>\n\n<div class ="origin-label">Mexico</div>\n\n<div class="map-legend"></div>\n\n<div class="surface-player surface">\n  <div class="player-container">\n    <h1 class="player-title"></h1>\n    <a href="#" class="player-close">close</a>\n    <div id="zeega-player">\n      <span class="fullscreen">fullscreen</span>\n      <div class="share">\n        <span class="icons">\n          <a class="share-twitter" href="#" target="blank"><i class="zsocial-twitter"></i></a>\n          <a class="share-fb" href="#" target="blank"><i class="zsocial-facebook"></i></a>\n          <a class="share-tumblr" href="http://www.tumblr.com/share" target="blank"><i class="zsocial-tumblr"></i></a>\n          <a class="share-email" href="#"><i class="zsocial-email"></i></a>\n        </span>\n        <h3>share</h3>\n      </div>\n    </div>\n    <div class="under-story"><p>Tracks Added</p></div>\n  </div>\n</div>\n\n<!--\n<div id="surface-line">\n  The surface in the bottom left-hand corner will pan to the appropriate location such that the animated line will always begin in the same position relative to the surface container.\n\n  Origin localtion will be stored in the attributes of the project.\n\n  The text on the line will be the collection title.\n</div>\n-->\n';
+}
+return __p;
+};
